@@ -1,0 +1,1231 @@
+ADVENTURE FILE WRITTEN: 2021-01-31T17:27:18.337540200
+Starting Room=LOC_START
+
+ALIAS: (ROAD,HILL)
+ALIAS: (SOUTH,S)
+ALIAS: (SLAB,SLABR)
+ALIAS: (OUT,OUTSI,EXIT,LEAVE)
+ALIAS: (D,DOWNW,DOWN,DESCE)
+ALIAS: (L,X,LOOK,EXAMI,TOUCH,DESCR)
+ALIAS: (BUILD,HOUSE)
+ALIAS: (WEST,W)
+ALIAS: (NORTH,N)
+ALIAS: (MAIN,OFFIC)
+ALIAS: (UPWAR,UP,U,ABOVE,ASCEN)
+ALIAS: (NULL,NOWHE)
+ALIAS: (INWAR,INSID,IN)
+ALIAS: (FORWA,CONTI,ONWAR)
+ALIAS: (PASSA,TUNNE)
+ALIAS: (EAST,E)
+ALIAS: (BACK,RETUR,RETRE)
+
+ROOM: NAME:LOC_BARRENROOM SHORTDESC:{You're in Barren Room.} LONGDESC:{You are inside a barren room.  The center of the room is completely\nempty except for some dust.  Marks in the dust lead away toward the\nfar end of the room.  The only exit is the way you came in.}
+VERB: (ROOM=LOC_BARRENROOM) FORK:LOC_FORK
+VERB: (ROOM=LOC_BARRENROOM) WEST:LOC_BARRENFRONT
+VERB: (ROOM=LOC_BARRENROOM) VIEW:LOC_BREATHTAKING
+VERB: (ROOM=LOC_BARRENROOM) OUT:LOC_BARRENFRONT
+END ROOM LOC_BARRENROOM
+ROOM: NAME:LOC_PITBRINK SHORTDESC:{You're at brink of pit.} LONGDESC:{You are on the brink of a thirty foot pit with a massive orange column\ndown one wall.  You could climb down here but you could not get back\nup.  The maze continues at this level.}
+VERB: (ROOM=LOC_PITBRINK) DOWN:LOC_BIRD
+VERB: (ROOM=LOC_PITBRINK) NORTH:LOC_ALIKE12
+VERB: (ROOM=LOC_PITBRINK) CLIMB:LOC_BIRD
+VERB: (ROOM=LOC_PITBRINK) WEST:LOC_ALIKE10
+VERB: (ROOM=LOC_PITBRINK) SOUTH:LOC_DEADEND6
+VERB: (ROOM=LOC_PITBRINK) EAST:LOC_ALIKE13
+END ROOM LOC_PITBRINK
+ROOM: NAME:LOC_ALIKE14 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE14) DOWN:LOC_ALIKE4
+VERB: (ROOM=LOC_ALIKE14) UPWAR:LOC_ALIKE4
+END ROOM LOC_ALIKE14
+ROOM: NAME:LOC_COMPLEX SHORTDESC:{You're at complex junction.} LONGDESC:{You are at a complex junction.  A low hands and knees passage from the\nnorth joins a higher crawl from the east to make a walking passage\ngoing west.  There is also a large room above.  The air is damp here.}
+VERB: (ROOM=LOC_COMPLEX) SHELL:LOC_SHELLROOM
+VERB: (ROOM=LOC_COMPLEX) NORTH:LOC_SHELLROOM
+VERB: (ROOM=LOC_COMPLEX) CLIMB:LOC_DUSTY
+VERB: (ROOM=LOC_COMPLEX) WEST:LOC_BEDQUILT
+VERB: (ROOM=LOC_COMPLEX) BEDQU:LOC_BEDQUILT
+VERB: (ROOM=LOC_COMPLEX) ROOM:LOC_DUSTY
+VERB: (ROOM=LOC_COMPLEX) EAST:LOC_ANTEROOM
+VERB: (ROOM=LOC_COMPLEX) UPWAR:LOC_DUSTY
+END ROOM LOC_COMPLEX
+ROOM: NAME:LOC_ALIKE10 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE10) DOWN:LOC_DEADEND5
+VERB: (ROOM=LOC_ALIKE10) NORTH:LOC_ALIKE10
+VERB: (ROOM=LOC_ALIKE10) WEST:LOC_ALIKE8
+VERB: (ROOM=LOC_ALIKE10) EAST:LOC_PITBRINK
+END ROOM LOC_ALIKE10
+ROOM: NAME:LOC_ALIKE11 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE11) NORTH:LOC_ALIKE1
+VERB: (ROOM=LOC_ALIKE11) WEST:LOC_ALIKE11
+VERB: (ROOM=LOC_ALIKE11) SOUTH:LOC_ALIKE11
+VERB: (ROOM=LOC_ALIKE11) EAST:LOC_DEADEND8
+END ROOM LOC_ALIKE11
+ROOM: NAME:LOC_SEWER SHORTDESC:{The stream flows out through a pair of 1 foot diameter sewer pipes.
+It would be advisable to use the exit.} LONGDESC:{The stream flows out through a pair of 1 foot diameter sewer pipes.\nIt would be advisable to use the exit.}
+END ROOM LOC_SEWER
+ROOM: NAME:LOC_ALIKE12 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE12) WEST:LOC_DEADEND10
+VERB: (ROOM=LOC_ALIKE12) SOUTH:LOC_PITBRINK
+VERB: (ROOM=LOC_ALIKE12) EAST:LOC_ALIKE13
+END ROOM LOC_ALIKE12
+ROOM: NAME:LOC_ALIKE13 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE13) NORTH:LOC_PITBRINK
+VERB: (ROOM=LOC_ALIKE13) WEST:LOC_ALIKE12
+VERB: (ROOM=LOC_ALIKE13) NW:LOC_DEADEND12
+END ROOM LOC_ALIKE13
+ROOM: NAME:LOC_INCLINE SHORTDESC:{You're at steep incline above large room.} LONGDESC:{You are at the top of a steep incline above a large room.  You could\nclimb down here, but you would not be able to climb up.  There is a\npassage leading back to the north.}
+VERB: (ROOM=LOC_INCLINE) DOWN:LOC_LOWROOM
+VERB: (ROOM=LOC_INCLINE) NORTH:LOC_WATERFALL
+VERB: (ROOM=LOC_INCLINE) PASSA:LOC_WATERFALL
+VERB: (ROOM=LOC_INCLINE) CLIMB:LOC_LOWROOM
+VERB: (ROOM=LOC_INCLINE) CAVER:LOC_WATERFALL
+END ROOM LOC_INCLINE
+ROOM: NAME:LOC_DEADEND9 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND9) SOUTH:LOC_ALIKE3
+VERB: (ROOM=LOC_DEADEND9) OUT:LOC_ALIKE3
+END ROOM LOC_DEADEND9
+ROOM: NAME:LOC_DEADEND8 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND8) WEST:LOC_ALIKE11
+VERB: (ROOM=LOC_DEADEND8) OUT:LOC_ALIKE11
+END ROOM LOC_DEADEND8
+ROOM: NAME:LOC_FORK SHORTDESC:{You're at fork in path.} LONGDESC:{The path forks here.  The left fork leads northeast.  A dull rumbling\nseems to get louder in that direction.  The right fork leads southeast\ndown a gentle slope.  The main corridor enters from the west.}
+VERB: (ROOM=LOC_FORK) SE:LOC_LIMESTONE
+VERB: (ROOM=LOC_FORK) DOWN:LOC_LIMESTONE
+VERB: (ROOM=LOC_FORK) LEFT:LOC_WARMWALLS
+VERB: (ROOM=LOC_FORK) BARRE:LOC_BARRENFRONT
+VERB: (ROOM=LOC_FORK) WEST:LOC_CORRIDOR
+VERB: (ROOM=LOC_FORK) NE:LOC_WARMWALLS
+VERB: (ROOM=LOC_FORK) RIGHT:LOC_LIMESTONE
+VERB: (ROOM=LOC_FORK) VIEW:LOC_BREATHTAKING
+END ROOM LOC_FORK
+ROOM: NAME:LOC_DUSTY SHORTDESC:{You're in dusty rock room.} LONGDESC:{You are in a large room full of dusty rocks.  There is a big hole in\nthe floor.  There are cracks everywhere, and a passage leading east.}
+VERB: (ROOM=LOC_DUSTY) HOLE:LOC_COMPLEX
+VERB: (ROOM=LOC_DUSTY) DOWN:LOC_COMPLEX
+VERB: (ROOM=LOC_DUSTY) FLOOR:LOC_COMPLEX
+VERB: (ROOM=LOC_DUSTY) PASSA:LOC_BROKEN
+VERB: (ROOM=LOC_DUSTY) BEDQU:LOC_BEDQUILT
+VERB: (ROOM=LOC_DUSTY) EAST:LOC_BROKEN
+END ROOM LOC_DUSTY
+ROOM: NAME:LOC_CLIFF SHORTDESC:{You're at cliff.} LONGDESC:{The forest thins out here to reveal a steep cliff.  There is no way\ndown, but a small ledge can be seen to the west across the chasm.}
+VERB: (ROOM=LOC_CLIFF) FORES:LOC_FOREST17
+VERB: (ROOM=LOC_CLIFF) SOUTH:LOC_FOREST17
+VERB: (ROOM=LOC_CLIFF) JUMP:LOC_NOMAKE
+VERB: (ROOM=LOC_CLIFF) EAST:LOC_FOREST19
+END ROOM LOC_CLIFF
+ROOM: NAME:LOC_SMALLPIT SHORTDESC:{You're at bottom of pit with stream.} LONGDESC:{You are in the bottom of a small pit with a little stream, which\nenters and exits through tiny slits.}
+VERB: (ROOM=LOC_SMALLPIT) CLIMB:LOC_SMALLPITBRINK
+VERB: (ROOM=LOC_SMALLPIT) UPWAR:LOC_SMALLPITBRINK
+VERB: (ROOM=LOC_SMALLPIT) OUT:LOC_SMALLPITBRINK
+END ROOM LOC_SMALLPIT
+ROOM: NAME:LOC_NE SHORTDESC:{You're at ne end.} LONGDESC:{You are at the northeast end of an immense room, even larger than the\nGiant Room.  It appears to be a repository for the "Adventure"\nprogram.  Massive torches far overhead bathe the room with smoky\nyellow light.  Scattered about you can be seen a pile of bottles (all\nof them empty), a nursery of young beanstalks murmuring quietly, a bed\nof oysters, a bundle of black rods with rusty stars on their ends, and\na collection of brass lanterns.  Off to one side a great many dwarves\nare sleeping on the floor, snoring loudly.  A notice nearby reads: "Do\nnot disturb the dwarves!"  An immense mirror is hanging against one\nwall, and stretches to the other end of the room, where various other\nsundry objects can be glimpsed dimly in the distance.}
+VERB: (ROOM=LOC_NE) SW:LOC_SW
+END ROOM LOC_NE
+ROOM: NAME:LOC_BADDIRECTION SHORTDESC:{There is no way to go that direction.} LONGDESC:{There is no way to go that direction.}
+END ROOM LOC_BADDIRECTION
+ROOM: NAME:LOC_LIMESTONE SHORTDESC:{You're in limestone passage.} LONGDESC:{You are walking along a gently sloping north/south passage lined with\noddly shaped limestone formations.}
+VERB: (ROOM=LOC_LIMESTONE) DOWN:LOC_BARRENFRONT
+VERB: (ROOM=LOC_LIMESTONE) FORK:LOC_FORK
+VERB: (ROOM=LOC_LIMESTONE) NORTH:LOC_FORK
+VERB: (ROOM=LOC_LIMESTONE) BARRE:LOC_BARRENFRONT
+VERB: (ROOM=LOC_LIMESTONE) SOUTH:LOC_BARRENFRONT
+VERB: (ROOM=LOC_LIMESTONE) VIEW:LOC_BREATHTAKING
+VERB: (ROOM=LOC_LIMESTONE) UPWAR:LOC_FORK
+END ROOM LOC_LIMESTONE
+ROOM: NAME:LOC_CLIFFACE SHORTDESC:{You are climbing along a nearly vertical cliff.} LONGDESC:{You are climbing along a nearly vertical cliff.}
+VERB: (ROOM=LOC_CLIFFACE) DOWN:LOC_CLIFFBASE
+VERB: (ROOM=LOC_CLIFFACE) UPWAR:LOC_FOOTSLIP
+END ROOM LOC_CLIFFACE
+ROOM: NAME:LOC_SECRET2 SHORTDESC:{You are in a secret n/s canyon above a sizable passage.} LONGDESC:{You are in a secret n/s canyon above a sizable passage.}
+VERB: (ROOM=LOC_SECRET2) DOWN:LOC_BEDQUILT
+VERB: (ROOM=LOC_SECRET2) NORTH:LOC_THREEJUNCTION
+VERB: (ROOM=LOC_SECRET2) PASSA:LOC_BEDQUILT
+VERB: (ROOM=LOC_SECRET2) SOUTH:LOC_TOPSTALACTITE
+END ROOM LOC_SECRET2
+ROOM: NAME:LOC_PITTOP SHORTDESC:{You're at top of small pit.} LONGDESC:{At your feet is a small pit breathing traces of white mist.  An east\npassage ends here except for a small crack leading on.}
+VERB: (ROOM=LOC_PITTOP) DOWN:LOC_MISTHALL
+VERB: (ROOM=LOC_PITTOP) DEBRI:LOC_DEBRIS
+VERB: (ROOM=LOC_PITTOP) PASSA:LOC_BIRD
+VERB: (ROOM=LOC_PITTOP) WEST:LOC_CRACK
+VERB: (ROOM=LOC_PITTOP) PIT:LOC_NECKBROKE
+VERB: (ROOM=LOC_PITTOP) ENTRA:LOC_BELOWGRATE
+VERB: (ROOM=LOC_PITTOP) DEPRE:LOC_GRATE
+VERB: (ROOM=LOC_PITTOP) CRACK:LOC_CRACK
+VERB: (ROOM=LOC_PITTOP) EAST:LOC_BIRD
+VERB: (ROOM=LOC_PITTOP) STEPS:LOC_NECKBROKE
+END ROOM LOC_PITTOP
+ROOM: NAME:LOC_SECRET1 SHORTDESC:{You are in a secret n/s canyon above a large room.} LONGDESC:{You are in a secret n/s canyon above a large room.}
+VERB: (ROOM=LOC_SECRET1) DOWN:LOC_SLAB
+VERB: (ROOM=LOC_SECRET1) NORTH:LOC_MIRRORCANYON
+VERB: (ROOM=LOC_SECRET1) RESER:LOC_RESERVOIR
+VERB: (ROOM=LOC_SECRET1) SOUTH:LOC_SECRET4
+VERB: (ROOM=LOC_SECRET1) SLAB:LOC_SLAB
+END ROOM LOC_SECRET1
+ROOM: NAME:LOC_CULDESAC SHORTDESC:{You are in a cul-de-sac about eight feet across.} LONGDESC:{You are in a cul-de-sac about eight feet across.}
+VERB: (ROOM=LOC_CULDESAC) SHELL:LOC_SHELLROOM
+VERB: (ROOM=LOC_CULDESAC) UPWAR:LOC_SLOPING1
+VERB: (ROOM=LOC_CULDESAC) OUT:LOC_SLOPING1
+END ROOM LOC_CULDESAC
+ROOM: NAME:LOC_SECRET4 SHORTDESC:{You are in a secret canyon which exits to the north and east.} LONGDESC:{You are in a secret canyon which exits to the north and east.}
+VERB: (ROOM=LOC_SECRET4) NORTH:LOC_SECRET1
+VERB: (ROOM=LOC_SECRET4) OUT:LOC_SECRET1
+END ROOM LOC_SECRET4
+ROOM: NAME:LOC_SECRET3 SHORTDESC:{You're in secret e/w canyon above tight canyon.} LONGDESC:{You are in a secret canyon which here runs e/w.  It crosses over a\nvery tight canyon 15 feet below.  If you go down you may not be able\nto get back up.}
+VERB: (ROOM=LOC_SECRET3) DOWN:LOC_WIDEPLACE
+VERB: (ROOM=LOC_SECRET3) WEST:LOC_SECRET6
+VERB: (ROOM=LOC_SECRET3) EAST:LOC_KINGHALL
+END ROOM LOC_SECRET3
+ROOM: NAME:LOC_DIFFERENT1 SHORTDESC:{You are in a maze of twisty little passages, all different.} LONGDESC:{You are in a maze of twisty little passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT1) SE:LOC_DIFFERENT6
+VERB: (ROOM=LOC_DIFFERENT1) DOWN:LOC_LONGWEST
+VERB: (ROOM=LOC_DIFFERENT1) SW:LOC_DIFFERENT4
+VERB: (ROOM=LOC_DIFFERENT1) NORTH:LOC_DIFFERENT11
+VERB: (ROOM=LOC_DIFFERENT1) NE:LOC_DIFFERENT5
+VERB: (ROOM=LOC_DIFFERENT1) WEST:LOC_DIFFERENT10
+VERB: (ROOM=LOC_DIFFERENT1) NW:LOC_DIFFERENT8
+VERB: (ROOM=LOC_DIFFERENT1) SOUTH:LOC_DIFFERENT3
+VERB: (ROOM=LOC_DIFFERENT1) EAST:LOC_DIFFERENT9
+VERB: (ROOM=LOC_DIFFERENT1) UPWAR:LOC_DIFFERENT7
+END ROOM LOC_DIFFERENT1
+ROOM: NAME:LOC_SECRET6 SHORTDESC:{You are in a secret canyon which exits to the north and east.} LONGDESC:{You are in a secret canyon which exits to the north and east.}
+VERB: (ROOM=LOC_SECRET6) EAST:LOC_SECRET3
+VERB: (ROOM=LOC_SECRET6) OUT:LOC_SECRET3
+END ROOM LOC_SECRET6
+ROOM: NAME:LOC_SWCHASM SHORTDESC:{You're on sw side of chasm.} LONGDESC:{You are on one side of a large, deep chasm.  A heavy white mist rising\nup from below obscures all view of the far side.  A sw path leads away\nfrom the chasm into a winding corridor.}
+VERB: (ROOM=LOC_SWCHASM) SW:LOC_WINDING
+VERB: (ROOM=LOC_SWCHASM) JUMP:LOC_NOMAKE
+END ROOM LOC_SWCHASM
+ROOM: NAME:LOC_SECRET5 SHORTDESC:{You are in a secret canyon which exits to the north and east.} LONGDESC:{You are in a secret canyon which exits to the north and east.}
+VERB: (ROOM=LOC_SECRET5) NORTH:LOC_SECRET1
+VERB: (ROOM=LOC_SECRET5) EAST:LOC_SECRET3
+END ROOM LOC_SECRET5
+ROOM: NAME:LOC_DIFFERENT4 SHORTDESC:{You are in a little maze of twisty passages, all different.} LONGDESC:{You are in a little maze of twisty passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT4) DOWN:LOC_DIFFERENT11
+VERB: (ROOM=LOC_DIFFERENT4) SE:LOC_DIFFERENT2
+VERB: (ROOM=LOC_DIFFERENT4) SW:LOC_DIFFERENT8
+VERB: (ROOM=LOC_DIFFERENT4) NORTH:LOC_DIFFERENT5
+VERB: (ROOM=LOC_DIFFERENT4) WEST:LOC_DIFFERENT7
+VERB: (ROOM=LOC_DIFFERENT4) NE:LOC_DIFFERENT9
+VERB: (ROOM=LOC_DIFFERENT4) NW:LOC_DIFFERENT1
+VERB: (ROOM=LOC_DIFFERENT4) SOUTH:LOC_DIFFERENT6
+VERB: (ROOM=LOC_DIFFERENT4) EAST:LOC_DIFFERENT10
+VERB: (ROOM=LOC_DIFFERENT4) UPWAR:LOC_DIFFERENT3
+END ROOM LOC_DIFFERENT4
+ROOM: NAME:LOC_WIDEPLACE SHORTDESC:{You are at a wide place in a very tight n/s canyon.} LONGDESC:{You are at a wide place in a very tight n/s canyon.}
+VERB: (ROOM=LOC_WIDEPLACE) NORTH:LOC_TALL
+VERB: (ROOM=LOC_WIDEPLACE) SOUTH:LOC_TIGHTPLACE
+END ROOM LOC_WIDEPLACE
+ROOM: NAME:LOC_DIFFERENT5 SHORTDESC:{You are in a twisting maze of little passages, all different.} LONGDESC:{You are in a twisting maze of little passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT5) DOWN:LOC_DIFFERENT3
+VERB: (ROOM=LOC_DIFFERENT5) SE:LOC_DIFFERENT11
+VERB: (ROOM=LOC_DIFFERENT5) SW:LOC_DIFFERENT7
+VERB: (ROOM=LOC_DIFFERENT5) NORTH:LOC_DIFFERENT9
+VERB: (ROOM=LOC_DIFFERENT5) WEST:LOC_DIFFERENT4
+VERB: (ROOM=LOC_DIFFERENT5) NE:LOC_DIFFERENT6
+VERB: (ROOM=LOC_DIFFERENT5) NW:LOC_DIFFERENT10
+VERB: (ROOM=LOC_DIFFERENT5) SOUTH:LOC_DIFFERENT2
+VERB: (ROOM=LOC_DIFFERENT5) EAST:LOC_DIFFERENT8
+VERB: (ROOM=LOC_DIFFERENT5) UPWAR:LOC_DIFFERENT1
+END ROOM LOC_DIFFERENT5
+ROOM: NAME:LOC_FOREST19 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST19) NORTH:LOC_CLIFF
+VERB: (ROOM=LOC_FOREST19) WEST:LOC_FOREST18
+VERB: (ROOM=LOC_FOREST19) SOUTH:LOC_FOREST20
+VERB: (ROOM=LOC_FOREST19) EAST:LOC_FOREST2
+END ROOM LOC_FOREST19
+ROOM: NAME:LOC_CAVEIN SHORTDESC:{The passage here is blocked by a recent cave-in.} LONGDESC:{The passage here is blocked by a recent cave-in.}
+VERB: (ROOM=LOC_CAVEIN) SOUTH:LOC_GIANTROOM
+VERB: (ROOM=LOC_CAVEIN) GIANT:LOC_GIANTROOM
+VERB: (ROOM=LOC_CAVEIN) OUT:LOC_GIANTROOM
+END ROOM LOC_CAVEIN
+ROOM: NAME:LOC_TOPSTALACTITE SHORTDESC:{You're at top of stalactite.} LONGDESC:{A large stalactite extends from the roof and almost reaches the floor\nbelow.  You could climb down it, and jump from it to the floor, but\nhaving done so you would be unable to reach it to climb back up.}
+VERB: (ROOM=LOC_TOPSTALACTITE) DOWN:LOC_ALIKE4
+VERB: (ROOM=LOC_TOPSTALACTITE) NORTH:LOC_SECRET2
+VERB: (ROOM=LOC_TOPSTALACTITE) CLIMB:LOC_ALIKE6
+VERB: (ROOM=LOC_TOPSTALACTITE) JUMP:LOC_ALIKE6
+END ROOM LOC_TOPSTALACTITE
+ROOM: NAME:LOC_DIFFERENT2 SHORTDESC:{You are in a little maze of twisting passages, all different.} LONGDESC:{You are in a little maze of twisting passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT2) SE:LOC_DIFFERENT7
+VERB: (ROOM=LOC_DIFFERENT2) DOWN:LOC_DIFFERENT10
+VERB: (ROOM=LOC_DIFFERENT2) SW:LOC_DIFFERENT3
+VERB: (ROOM=LOC_DIFFERENT2) NORTH:LOC_DIFFERENT4
+VERB: (ROOM=LOC_DIFFERENT2) NE:LOC_DIFFERENT8
+VERB: (ROOM=LOC_DIFFERENT2) WEST:LOC_DIFFERENT9
+VERB: (ROOM=LOC_DIFFERENT2) NW:LOC_DIFFERENT6
+VERB: (ROOM=LOC_DIFFERENT2) SOUTH:LOC_DEADEND13
+VERB: (ROOM=LOC_DIFFERENT2) EAST:LOC_DIFFERENT5
+VERB: (ROOM=LOC_DIFFERENT2) UPWAR:LOC_DIFFERENT11
+END ROOM LOC_DIFFERENT2
+ROOM: NAME:LOC_DIFFERENT3 SHORTDESC:{You are in a maze of twisting little passages, all different.} LONGDESC:{You are in a maze of twisting little passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT3) SE:LOC_DIFFERENT4
+VERB: (ROOM=LOC_DIFFERENT3) DOWN:LOC_DIFFERENT9
+VERB: (ROOM=LOC_DIFFERENT3) SW:LOC_DIFFERENT6
+VERB: (ROOM=LOC_DIFFERENT3) NORTH:LOC_DIFFERENT10
+VERB: (ROOM=LOC_DIFFERENT3) WEST:LOC_DIFFERENT1
+VERB: (ROOM=LOC_DIFFERENT3) NE:LOC_DIFFERENT7
+VERB: (ROOM=LOC_DIFFERENT3) NW:LOC_DIFFERENT5
+VERB: (ROOM=LOC_DIFFERENT3) SOUTH:LOC_DIFFERENT11
+VERB: (ROOM=LOC_DIFFERENT3) EAST:LOC_DIFFERENT2
+VERB: (ROOM=LOC_DIFFERENT3) UPWAR:LOC_DIFFERENT8
+END ROOM LOC_DIFFERENT3
+ROOM: NAME:LOC_DIFFERENT8 SHORTDESC:{You are in a twisty maze of little passages, all different.} LONGDESC:{You are in a twisty maze of little passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT8) DOWN:LOC_DIFFERENT6
+VERB: (ROOM=LOC_DIFFERENT8) SE:LOC_DIFFERENT10
+VERB: (ROOM=LOC_DIFFERENT8) SW:LOC_DIFFERENT5
+VERB: (ROOM=LOC_DIFFERENT8) NORTH:LOC_DIFFERENT2
+VERB: (ROOM=LOC_DIFFERENT8) WEST:LOC_DIFFERENT3
+VERB: (ROOM=LOC_DIFFERENT8) NE:LOC_DIFFERENT11
+VERB: (ROOM=LOC_DIFFERENT8) NW:LOC_DIFFERENT9
+VERB: (ROOM=LOC_DIFFERENT8) SOUTH:LOC_DIFFERENT7
+VERB: (ROOM=LOC_DIFFERENT8) EAST:LOC_DIFFERENT1
+VERB: (ROOM=LOC_DIFFERENT8) UPWAR:LOC_DIFFERENT4
+END ROOM LOC_DIFFERENT8
+ROOM: NAME:LOC_FOREST16 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST16) NORTH:LOC_FOREST17
+VERB: (ROOM=LOC_FOREST16) WEST:LOC_FOREST14
+VERB: (ROOM=LOC_FOREST16) SOUTH:LOC_FOREST15
+VERB: (ROOM=LOC_FOREST16) EAST:LOC_FOREST17
+END ROOM LOC_FOREST16
+ROOM: NAME:LOC_DIFFERENT9 SHORTDESC:{You are in a little twisty maze of passages, all different.} LONGDESC:{You are in a little twisty maze of passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT9) SE:LOC_DIFFERENT1
+VERB: (ROOM=LOC_DIFFERENT9) DOWN:LOC_DIFFERENT5
+VERB: (ROOM=LOC_DIFFERENT9) SW:LOC_DIFFERENT10
+VERB: (ROOM=LOC_DIFFERENT9) NORTH:LOC_DIFFERENT8
+VERB: (ROOM=LOC_DIFFERENT9) NE:LOC_DIFFERENT3
+VERB: (ROOM=LOC_DIFFERENT9) WEST:LOC_DIFFERENT2
+VERB: (ROOM=LOC_DIFFERENT9) NW:LOC_DIFFERENT7
+VERB: (ROOM=LOC_DIFFERENT9) SOUTH:LOC_DIFFERENT4
+VERB: (ROOM=LOC_DIFFERENT9) EAST:LOC_DIFFERENT11
+VERB: (ROOM=LOC_DIFFERENT9) UPWAR:LOC_DIFFERENT6
+END ROOM LOC_DIFFERENT9
+ROOM: NAME:LOC_FOREST15 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST15) NORTH:LOC_ROADEND
+VERB: (ROOM=LOC_FOREST15) WEST:LOC_FOREST22
+VERB: (ROOM=LOC_FOREST15) SOUTH:LOC_FOREST14
+VERB: (ROOM=LOC_FOREST15) EAST:LOC_FOREST16
+END ROOM LOC_FOREST15
+ROOM: NAME:LOC_WESTSIDE SHORTDESC:{You're in the west side chamber.} LONGDESC:{You are in the west side chamber of the Hall of the Mountain King.\nA passage continues west and up here.}
+VERB: (ROOM=LOC_WESTSIDE) WEST:LOC_CROSSOVER
+VERB: (ROOM=LOC_WESTSIDE) HALL:LOC_KINGHALL
+VERB: (ROOM=LOC_WESTSIDE) EAST:LOC_KINGHALL
+VERB: (ROOM=LOC_WESTSIDE) UPWAR:LOC_CROSSOVER
+VERB: (ROOM=LOC_WESTSIDE) OUT:LOC_KINGHALL
+END ROOM LOC_WESTSIDE
+ROOM: NAME:LOC_DIFFERENT6 SHORTDESC:{You are in a twisting little maze of passages, all different.} LONGDESC:{You are in a twisting little maze of passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT6) SE:LOC_DIFFERENT5
+VERB: (ROOM=LOC_DIFFERENT6) DOWN:LOC_DIFFERENT8
+VERB: (ROOM=LOC_DIFFERENT6) SW:LOC_DIFFERENT2
+VERB: (ROOM=LOC_DIFFERENT6) NORTH:LOC_DIFFERENT3
+VERB: (ROOM=LOC_DIFFERENT6) NE:LOC_DIFFERENT1
+VERB: (ROOM=LOC_DIFFERENT6) WEST:LOC_DIFFERENT11
+VERB: (ROOM=LOC_DIFFERENT6) NW:LOC_DIFFERENT4
+VERB: (ROOM=LOC_DIFFERENT6) SOUTH:LOC_DIFFERENT9
+VERB: (ROOM=LOC_DIFFERENT6) EAST:LOC_DIFFERENT7
+VERB: (ROOM=LOC_DIFFERENT6) UPWAR:LOC_DIFFERENT10
+END ROOM LOC_DIFFERENT6
+ROOM: NAME:LOC_FOREST18 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST18) NORTH:LOC_FOREST2
+VERB: (ROOM=LOC_FOREST18) WEST:LOC_FOREST17
+VERB: (ROOM=LOC_FOREST18) SOUTH:LOC_FOREST21
+VERB: (ROOM=LOC_FOREST18) EAST:LOC_FOREST19
+END ROOM LOC_FOREST18
+ROOM: NAME:LOC_DIFFERENT7 SHORTDESC:{You are in a twisty little maze of passages, all different.} LONGDESC:{You are in a twisty little maze of passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT7) SE:LOC_DIFFERENT3
+VERB: (ROOM=LOC_DIFFERENT7) DOWN:LOC_DIFFERENT4
+VERB: (ROOM=LOC_DIFFERENT7) SW:LOC_DIFFERENT9
+VERB: (ROOM=LOC_DIFFERENT7) NORTH:LOC_DIFFERENT1
+VERB: (ROOM=LOC_DIFFERENT7) WEST:LOC_DIFFERENT8
+VERB: (ROOM=LOC_DIFFERENT7) NE:LOC_DIFFERENT10
+VERB: (ROOM=LOC_DIFFERENT7) NW:LOC_DIFFERENT11
+VERB: (ROOM=LOC_DIFFERENT7) SOUTH:LOC_DIFFERENT5
+VERB: (ROOM=LOC_DIFFERENT7) EAST:LOC_DIFFERENT6
+VERB: (ROOM=LOC_DIFFERENT7) UPWAR:LOC_DIFFERENT2
+END ROOM LOC_DIFFERENT7
+ROOM: NAME:LOC_FOREST17 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST17) NORTH:LOC_CLIFF
+VERB: (ROOM=LOC_FOREST17) WEST:LOC_FOREST16
+VERB: (ROOM=LOC_FOREST17) SOUTH:LOC_FOREST16
+VERB: (ROOM=LOC_FOREST17) EAST:LOC_FOREST18
+END ROOM LOC_FOREST17
+ROOM: NAME:LOC_WESTEND SHORTDESC:{You're at west end of Twopit Room.} LONGDESC:{You are at the west end of the Twopit Room.  There is a large hole in\nthe wall above the pit at this end of the room.}
+VERB: (ROOM=LOC_WESTEND) DOWN:LOC_WESTPIT
+VERB: (ROOM=LOC_WESTEND) ACROS:LOC_EASTEND
+VERB: (ROOM=LOC_WESTEND) WEST:LOC_SLAB
+VERB: (ROOM=LOC_WESTEND) PIT:LOC_WESTPIT
+VERB: (ROOM=LOC_WESTEND) SLAB:LOC_SLAB
+VERB: (ROOM=LOC_WESTEND) EAST:LOC_EASTEND
+END ROOM LOC_WESTEND
+ROOM: NAME:LOC_FOREST22 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST22) NORTH:LOC_FOREST15
+VERB: (ROOM=LOC_FOREST22) WEST:LOC_FOREST11
+VERB: (ROOM=LOC_FOREST22) SOUTH:LOC_FOREST12
+VERB: (ROOM=LOC_FOREST22) EAST:LOC_FOREST8
+END ROOM LOC_FOREST22
+ROOM: NAME:LOC_COBBLE SHORTDESC:{You're in cobble crawl.} LONGDESC:{You are crawling over cobbles in a low passage.  There is a dim light\nat the east end of the passage.}
+VERB: (ROOM=LOC_COBBLE) SURFA:LOC_BELOWGRATE
+VERB: (ROOM=LOC_COBBLE) DEBRI:LOC_DEBRIS
+VERB: (ROOM=LOC_COBBLE) WEST:LOC_DEBRIS
+VERB: (ROOM=LOC_COBBLE) DARK:LOC_DEBRIS
+VERB: (ROOM=LOC_COBBLE) INWAR:LOC_DEBRIS
+VERB: (ROOM=LOC_COBBLE) PIT:LOC_PITTOP
+VERB: (ROOM=LOC_COBBLE) EAST:LOC_BELOWGRATE
+VERB: (ROOM=LOC_COBBLE) OUT:LOC_BELOWGRATE
+END ROOM LOC_COBBLE
+ROOM: NAME:LOC_STEEP SHORTDESC:{You are on a very steep incline, which widens at it goes upward.} LONGDESC:{You are on a very steep incline, which widens at it goes upward.}
+VERB: (ROOM=LOC_STEEP) DOWN:LOC_TREACHEROUS
+VERB: (ROOM=LOC_STEEP) SE:LOC_TREACHEROUS
+VERB: (ROOM=LOC_STEEP) NW:LOC_CLIFFBASE
+VERB: (ROOM=LOC_STEEP) UPWAR:LOC_CLIFFBASE
+END ROOM LOC_STEEP
+ROOM: NAME:LOC_ROADEND SHORTDESC:{You're at end of road.} LONGDESC:{The road, which approaches from the east, ends here amid the trees.}
+VERB: (ROOM=LOC_ROADEND) NORTH:LOC_FOREST21
+VERB: (ROOM=LOC_ROADEND) ROAD:LOC_HILL
+VERB: (ROOM=LOC_ROADEND) BUILD:LOC_START
+VERB: (ROOM=LOC_ROADEND) WEST:LOC_FOREST15
+VERB: (ROOM=LOC_ROADEND) FORES:LOC_FOREST14
+VERB: (ROOM=LOC_ROADEND) SOUTH:LOC_FOREST14
+VERB: (ROOM=LOC_ROADEND) EAST:LOC_HILL
+VERB: (ROOM=LOC_ROADEND) UPWAR:LOC_HILL
+END ROOM LOC_ROADEND
+ROOM: NAME:LOC_FOREST21 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST21) NORTH:LOC_FOREST18
+VERB: (ROOM=LOC_FOREST21) WEST:LOC_ROADEND
+VERB: (ROOM=LOC_FOREST21) SOUTH:LOC_FOREST21
+VERB: (ROOM=LOC_FOREST21) EAST:LOC_FOREST20
+END ROOM LOC_FOREST21
+ROOM: NAME:LOC_FOREST20 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST20) NORTH:LOC_FOREST19
+VERB: (ROOM=LOC_FOREST20) WEST:LOC_FOREST21
+VERB: (ROOM=LOC_FOREST20) SOUTH:LOC_FOREST13
+VERB: (ROOM=LOC_FOREST20) EAST:LOC_HILL
+END ROOM LOC_FOREST20
+ROOM: NAME:LOC_BREATHTAKING SHORTDESC:{You're at breath-taking view.} LONGDESC:{You are on the edge of a breath-taking view.  Far below you is an\nactive volcano, from which great gouts of molten lava come surging\nout, cascading back down into the depths.  The glowing rock fills the\nfarthest reaches of the cavern with a blood-red glare, giving every-\nthing an eerie, macabre appearance.  The air is filled with flickering\nsparks of ash and a heavy smell of brimstone.  The walls are hot to\nthe touch, and the thundering of the volcano drowns out all other\nsounds.  Embedded in the jagged roof far overhead are myriad twisted\nformations composed of pure white alabaster, which scatter the murky\nlight into sinister apparitions upon the walls.  To one side is a deep\ngorge, filled with a bizarre chaos of tortured rock which seems to\nhave been crafted by the devil himself.  An immense river of fire\ncrashes out from the depths of the volcano, burns its way through the\ngorge, and plummets into a bottomless pit far off to your left.  To\nthe right, an immense geyser of blistering steam erupts continuously\nfrom a barren island in the center of a sulfurous lake, which bubbles\nominously.  The far right wall is aflame with an incandescence of its\nown, which lends an additional infernal splendor to the already\nhellish scene.  A dark, foreboding passage exits to the south.}
+VERB: (ROOM=LOC_BREATHTAKING) FORK:LOC_FORK
+VERB: (ROOM=LOC_BREATHTAKING) PASSA:LOC_WARMWALLS
+VERB: (ROOM=LOC_BREATHTAKING) SOUTH:LOC_WARMWALLS
+VERB: (ROOM=LOC_BREATHTAKING) JUMP:LOC_GRUESOME
+VERB: (ROOM=LOC_BREATHTAKING) OUT:LOC_WARMWALLS
+END ROOM LOC_BREATHTAKING
+ROOM: NAME:LOC_KINGHALL SHORTDESC:{You're in Hall of Mt King.} LONGDESC:{You are in the Hall of the Mountain King, with passages off in all\ndirections.}
+VERB: (ROOM=LOC_KINGHALL) STAIR:LOC_MISTHALL
+VERB: (ROOM=LOC_KINGHALL) LEFT:LOC_SOUTHSIDE
+VERB: (ROOM=LOC_KINGHALL) SW:LOC_SNAKEBLOCK
+VERB: (ROOM=LOC_KINGHALL) NORTH:LOC_SNAKEBLOCK
+VERB: (ROOM=LOC_KINGHALL) SECRE:LOC_SECRET3
+VERB: (ROOM=LOC_KINGHALL) WEST:LOC_WESTSIDE
+VERB: (ROOM=LOC_KINGHALL) RIGHT:LOC_FLOORHOLE
+VERB: (ROOM=LOC_KINGHALL) SOUTH:LOC_SOUTHSIDE
+VERB: (ROOM=LOC_KINGHALL) FORWA:LOC_WESTSIDE
+VERB: (ROOM=LOC_KINGHALL) EAST:LOC_MISTHALL
+VERB: (ROOM=LOC_KINGHALL) UPWAR:LOC_MISTHALL
+END ROOM LOC_KINGHALL
+ROOM: NAME:LOC_ALCOVE SHORTDESC:{You're in alcove.} LONGDESC:{You are in an alcove.  A small nw path seems to widen after a short\ndistance.  An extremely tight tunnel leads east.  It looks like a very\ntight squeeze.  An eerie light can be seen at the other end.}
+VERB: (ROOM=LOC_ALCOVE) NW:LOC_MISTY
+VERB: (ROOM=LOC_ALCOVE) CAVER:LOC_MISTY
+VERB: (ROOM=LOC_ALCOVE) EAST:LOC_PLOVER
+END ROOM LOC_ALCOVE
+ROOM: NAME:LOC_SOUTHSIDE SHORTDESC:{You are in the south side chamber.} LONGDESC:{You are in the south side chamber.}
+VERB: (ROOM=LOC_SOUTHSIDE) NORTH:LOC_KINGHALL
+VERB: (ROOM=LOC_SOUTHSIDE) HALL:LOC_KINGHALL
+VERB: (ROOM=LOC_SOUTHSIDE) OUT:LOC_KINGHALL
+END ROOM LOC_SOUTHSIDE
+ROOM: NAME:LOC_DEBRIS SHORTDESC:{You're in debris room.} LONGDESC:{You are in a debris room filled with stuff washed in from the surface.\nA low wide passage with cobbles becomes plugged with mud and debris\nhere, but an awkward canyon leads upward and west.  In the mud someone\nhas scrawled, "MAGIC WORD XYZZY".}
+VERB: (ROOM=LOC_DEBRIS) WEST:LOC_AWKWARD
+VERB: (ROOM=LOC_DEBRIS) CANYO:LOC_AWKWARD
+VERB: (ROOM=LOC_DEBRIS) INWAR:LOC_AWKWARD
+VERB: (ROOM=LOC_DEBRIS) ENTRA:LOC_BELOWGRATE
+VERB: (ROOM=LOC_DEBRIS) CRAWL:LOC_COBBLE
+VERB: (ROOM=LOC_DEBRIS) COBBL:LOC_COBBLE
+VERB: (ROOM=LOC_DEBRIS) LOW:LOC_COBBLE
+VERB: (ROOM=LOC_DEBRIS) PASSA:LOC_COBBLE
+VERB: (ROOM=LOC_DEBRIS) XYZZY:LOC_FOOF2
+VERB: (ROOM=LOC_DEBRIS) PIT:LOC_PITTOP
+VERB: (ROOM=LOC_DEBRIS) DEPRE:LOC_GRATE
+VERB: (ROOM=LOC_DEBRIS) EAST:LOC_COBBLE
+VERB: (ROOM=LOC_DEBRIS) UPWAR:LOC_AWKWARD
+END ROOM LOC_DEBRIS
+ROOM: NAME:LOC_NARROW SHORTDESC:{You're in narrow corridor.} LONGDESC:{You are in a long, narrow corridor stretching out of sight to the\nwest.  At the eastern end is a hole through which you can see a\nprofusion of leaves.}
+VERB: (ROOM=LOC_NARROW) DOWN:LOC_WESTPIT
+VERB: (ROOM=LOC_NARROW) CLIMB:LOC_WESTPIT
+VERB: (ROOM=LOC_NARROW) WEST:LOC_GIANTROOM
+VERB: (ROOM=LOC_NARROW) JUMP:LOC_NECKBROKE
+VERB: (ROOM=LOC_NARROW) EAST:LOC_WESTPIT
+VERB: (ROOM=LOC_NARROW) GIANT:LOC_GIANTROOM
+END ROOM LOC_NARROW
+ROOM: NAME:LOC_LARGE SHORTDESC:{You are in a large chamber with passages to the west and north.} LONGDESC:{You are in a large chamber with passages to the west and north.}
+VERB: (ROOM=LOC_LARGE) NORTH:LOC_STOREROOM
+VERB: (ROOM=LOC_LARGE) WEST:LOC_ROUGHHEWN
+END ROOM LOC_LARGE
+ROOM: NAME:LOC_MISTHALL SHORTDESC:{You're in Hall of Mists.} LONGDESC:{You are at one end of a vast hall stretching forward out of sight to\nthe west.  There are openings to either side.  Nearby, a wide stone\nstaircase leads downward.  The hall is filled with wisps of white mist\nswaying to and fro almost as if alive.  A cold wind blows up the\nstaircase.  There is a passage at the top of a dome behind you.}
+VERB: (ROOM=LOC_MISTHALL) DOWN:LOC_KINGHALL
+VERB: (ROOM=LOC_MISTHALL) DOME:LOC_DOME
+VERB: (ROOM=LOC_MISTHALL) LEFT:LOC_NUGGET
+VERB: (ROOM=LOC_MISTHALL) WEST:LOC_EASTBANK
+VERB: (ROOM=LOC_MISTHALL) FORWA:LOC_EASTBANK
+VERB: (ROOM=LOC_MISTHALL) STAIR:LOC_KINGHALL
+VERB: (ROOM=LOC_MISTHALL) NORTH:LOC_KINGHALL
+VERB: (ROOM=LOC_MISTHALL) PASSA:LOC_DOME
+VERB: (ROOM=LOC_MISTHALL) HALL:LOC_EASTBANK
+VERB: (ROOM=LOC_MISTHALL) Y:LOC_JUMBLE
+VERB: (ROOM=LOC_MISTHALL) PIT:LOC_DOME
+VERB: (ROOM=LOC_MISTHALL) SOUTH:LOC_NUGGET
+VERB: (ROOM=LOC_MISTHALL) EAST:LOC_DOME
+VERB: (ROOM=LOC_MISTHALL) UPWAR:LOC_PITTOP
+VERB: (ROOM=LOC_MISTHALL) STEPS:LOC_DOME
+END ROOM LOC_MISTHALL
+ROOM: NAME:LOC_BROKEN SHORTDESC:{You're in dirty passage.} LONGDESC:{You are in a dirty broken passage.  To the east is a crawl.  To the\nwest is a large passage.  Above you is a hole to another passage.}
+VERB: (ROOM=LOC_BROKEN) CRAWL:LOC_SMALLPITBRINK
+VERB: (ROOM=LOC_BROKEN) HOLE:LOC_FLOORHOLE
+VERB: (ROOM=LOC_BROKEN) WEST:LOC_DUSTY
+VERB: (ROOM=LOC_BROKEN) BEDQU:LOC_BEDQUILT
+VERB: (ROOM=LOC_BROKEN) EAST:LOC_SMALLPITBRINK
+VERB: (ROOM=LOC_BROKEN) UPWAR:LOC_FLOORHOLE
+END ROOM LOC_BROKEN
+ROOM: NAME:LOC_WESTBANK SHORTDESC:{You're on west bank of fissure.} LONGDESC:{You are on the west side of the fissure in the Hall of Mists.}
+VERB: (ROOM=LOC_WESTBANK) OVER:LOC_EASTBANK
+VERB: (ROOM=LOC_WESTBANK) NORTH:LOC_PARALLEL1
+VERB: (ROOM=LOC_WESTBANK) WEST:LOC_MISTWEST
+VERB: (ROOM=LOC_WESTBANK) FORWA:LOC_NOMAKE
+END ROOM LOC_WESTBANK
+ROOM: NAME:LOC_SLOPING1 SHORTDESC:{You are in a long sloping corridor with ragged sharp walls.} LONGDESC:{You are in a long sloping corridor with ragged sharp walls.}
+VERB: (ROOM=LOC_SLOPING1) DOWN:LOC_CULDESAC
+VERB: (ROOM=LOC_SLOPING1) SHELL:LOC_SHELLROOM
+VERB: (ROOM=LOC_SLOPING1) UPWAR:LOC_SHELLROOM
+END ROOM LOC_SLOPING1
+ROOM: NAME:LOC_PLANTTOP SHORTDESC:{You have climbed up the plant and out of the pit.} LONGDESC:{You have climbed up the plant and out of the pit.}
+END ROOM LOC_PLANTTOP
+ROOM: NAME:LOC_WARMWALLS SHORTDESC:{You're at junction with warm walls.} LONGDESC:{The walls are quite warm here.  From the north can be heard a steady\nroar, so loud that the entire cave seems to be trembling.  Another\npassage leads south, and a low crawl goes east.}
+VERB: (ROOM=LOC_WARMWALLS) CRAWL:LOC_BOULDERS2
+VERB: (ROOM=LOC_WARMWALLS) FORK:LOC_FORK
+VERB: (ROOM=LOC_WARMWALLS) NORTH:LOC_BREATHTAKING
+VERB: (ROOM=LOC_WARMWALLS) SOUTH:LOC_FORK
+VERB: (ROOM=LOC_WARMWALLS) VIEW:LOC_BREATHTAKING
+VERB: (ROOM=LOC_WARMWALLS) EAST:LOC_BOULDERS2
+END ROOM LOC_WARMWALLS
+ROOM: NAME:LOC_LONGEAST SHORTDESC:{You're at east end of long hall.} LONGDESC:{You are at the east end of a very long hall apparently without side\nchambers.  To the east a low wide crawl slants up.  To the north a\nround two foot hole slants down.}
+VERB: (ROOM=LOC_LONGEAST) CRAWL:LOC_MISTWEST
+VERB: (ROOM=LOC_LONGEAST) HOLE:LOC_CROSSOVER
+VERB: (ROOM=LOC_LONGEAST) DOWN:LOC_CROSSOVER
+VERB: (ROOM=LOC_LONGEAST) NORTH:LOC_CROSSOVER
+VERB: (ROOM=LOC_LONGEAST) WEST:LOC_LONGWEST
+VERB: (ROOM=LOC_LONGEAST) EAST:LOC_MISTWEST
+VERB: (ROOM=LOC_LONGEAST) UPWAR:LOC_MISTWEST
+END ROOM LOC_LONGEAST
+ROOM: NAME:LOC_FOREST12 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST12) NORTH:LOC_FOREST22
+VERB: (ROOM=LOC_FOREST12) WEST:LOC_FOREST14
+VERB: (ROOM=LOC_FOREST12) SOUTH:LOC_VALLEY
+VERB: (ROOM=LOC_FOREST12) EAST:LOC_FOREST13
+END ROOM LOC_FOREST12
+ROOM: NAME:LOC_Y2 SHORTDESC:{You're at "Y2".} LONGDESC:{You are in a large room, with a passage to the south, a passage to the\nwest, and a wall of broken rock to the east.  There is a large "Y2" on\na rock in the room's center.}
+VERB: (ROOM=LOC_Y2) PLUGH:LOC_FOOF4
+VERB: (ROOM=LOC_Y2) BROKE:LOC_JUMBLE
+VERB: (ROOM=LOC_Y2) WALL:LOC_JUMBLE
+VERB: (ROOM=LOC_Y2) WEST:LOC_WINDOW1
+VERB: (ROOM=LOC_Y2) PLOVE:LOC_FOOF5
+VERB: (ROOM=LOC_Y2) SOUTH:LOC_FLOORHOLE
+VERB: (ROOM=LOC_Y2) EAST:LOC_JUMBLE
+END ROOM LOC_Y2
+ROOM: NAME:LOC_FOREST11 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST11) NORTH:LOC_FOREST22
+VERB: (ROOM=LOC_FOREST11) WEST:LOC_FOREST8
+VERB: (ROOM=LOC_FOREST11) SOUTH:LOC_FOREST9
+VERB: (ROOM=LOC_FOREST11) EAST:LOC_FOREST10
+END ROOM LOC_FOREST11
+ROOM: NAME:LOC_LEDGE SHORTDESC:{You're on ledge.} LONGDESC:{You are on a small ledge on one face of a sheer cliff.  There are no\npaths away from the ledge.  Across the chasm is a small clearing\nsurrounded by forest.}
+VERB: (ROOM=LOC_LEDGE) JUMP:LOC_NOMAKE
+END ROOM LOC_LEDGE
+ROOM: NAME:LOC_FOREST14 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST14) NORTH:LOC_FOREST15
+VERB: (ROOM=LOC_FOREST14) WEST:LOC_FOREST16
+VERB: (ROOM=LOC_FOREST14) SOUTH:LOC_FOREST12
+VERB: (ROOM=LOC_FOREST14) EAST:LOC_ROADEND
+END ROOM LOC_FOREST14
+ROOM: NAME:LOC_FOREST13 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST13) NORTH:LOC_FOREST20
+VERB: (ROOM=LOC_FOREST13) WEST:LOC_FOREST12
+VERB: (ROOM=LOC_FOREST13) SOUTH:LOC_HILL
+VERB: (ROOM=LOC_FOREST13) EAST:LOC_FOREST1
+END ROOM LOC_FOREST13
+ROOM: NAME:LOC_CORRIDOR SHORTDESC:{You're in corridor.} LONGDESC:{You're in a long east/west corridor.  A faint rumbling noise can be\nheard in the distance.}
+VERB: (ROOM=LOC_CORRIDOR) FORK:LOC_FORK
+VERB: (ROOM=LOC_CORRIDOR) BARRE:LOC_BARRENFRONT
+VERB: (ROOM=LOC_CORRIDOR) WEST:LOC_NECHASM
+VERB: (ROOM=LOC_CORRIDOR) EAST:LOC_FORK
+VERB: (ROOM=LOC_CORRIDOR) VIEW:LOC_BREATHTAKING
+END ROOM LOC_CORRIDOR
+ROOM: NAME:LOC_FOREST10 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST10) NORTH:LOC_FOREST9
+VERB: (ROOM=LOC_FOREST10) WEST:LOC_FOREST11
+VERB: (ROOM=LOC_FOREST10) SOUTH:LOC_GRATE
+VERB: (ROOM=LOC_FOREST10) EAST:LOC_SLIT
+END ROOM LOC_FOREST10
+ROOM: NAME:LOC_ALIKE7 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE7) WEST:LOC_ALIKE5
+VERB: (ROOM=LOC_ALIKE7) SOUTH:LOC_ALIKE9
+VERB: (ROOM=LOC_ALIKE7) EAST:LOC_ALIKE8
+VERB: (ROOM=LOC_ALIKE7) UPWAR:LOC_ALIKE6
+END ROOM LOC_ALIKE7
+ROOM: NAME:LOC_ALIKE8 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE8) DOWN:LOC_DEADEND11
+VERB: (ROOM=LOC_ALIKE8) NORTH:LOC_ALIKE10
+VERB: (ROOM=LOC_ALIKE8) WEST:LOC_ALIKE6
+VERB: (ROOM=LOC_ALIKE8) SOUTH:LOC_ALIKE8
+VERB: (ROOM=LOC_ALIKE8) EAST:LOC_ALIKE7
+VERB: (ROOM=LOC_ALIKE8) UPWAR:LOC_ALIKE9
+END ROOM LOC_ALIKE8
+ROOM: NAME:LOC_ALIKE5 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE5) WEST:LOC_ALIKE7
+VERB: (ROOM=LOC_ALIKE5) EAST:LOC_ALIKE6
+END ROOM LOC_ALIKE5
+ROOM: NAME:LOC_ALIKE6 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE6) DOWN:LOC_ALIKE7
+VERB: (ROOM=LOC_ALIKE6) WEST:LOC_ALIKE5
+VERB: (ROOM=LOC_ALIKE6) SOUTH:LOC_ALIKE8
+VERB: (ROOM=LOC_ALIKE6) EAST:LOC_ALIKE3
+END ROOM LOC_ALIKE6
+ROOM: NAME:LOC_ALIKE3 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE3) DOWN:LOC_DEADEND3
+VERB: (ROOM=LOC_ALIKE3) NORTH:LOC_DEADEND9
+VERB: (ROOM=LOC_ALIKE3) SOUTH:LOC_ALIKE6
+VERB: (ROOM=LOC_ALIKE3) EAST:LOC_ALIKE2
+END ROOM LOC_ALIKE3
+ROOM: NAME:LOC_ALIKE4 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE4) DOWN:LOC_ALIKE14
+VERB: (ROOM=LOC_ALIKE4) NORTH:LOC_ALIKE2
+VERB: (ROOM=LOC_ALIKE4) WEST:LOC_ALIKE1
+VERB: (ROOM=LOC_ALIKE4) SOUTH:LOC_DEADEND2
+VERB: (ROOM=LOC_ALIKE4) EAST:LOC_DEADEND1
+VERB: (ROOM=LOC_ALIKE4) UPWAR:LOC_ALIKE14
+END ROOM LOC_ALIKE4
+ROOM: NAME:LOC_ALIKE1 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE1) NORTH:LOC_ALIKE1
+VERB: (ROOM=LOC_ALIKE1) WEST:LOC_ALIKE11
+VERB: (ROOM=LOC_ALIKE1) SOUTH:LOC_ALIKE4
+VERB: (ROOM=LOC_ALIKE1) EAST:LOC_ALIKE2
+VERB: (ROOM=LOC_ALIKE1) UPWAR:LOC_MISTWEST
+END ROOM LOC_ALIKE1
+ROOM: NAME:LOC_BARRENFRONT SHORTDESC:{You're in front of Barren Room.} LONGDESC:{You are standing at the entrance to a large, barren room.  A notice\nabove the entrance reads:  "Caution!  Bear in room!"}
+VERB: (ROOM=LOC_BARRENFRONT) FORK:LOC_FORK
+VERB: (ROOM=LOC_BARRENFRONT) BARRE:LOC_BARRENROOM
+VERB: (ROOM=LOC_BARRENFRONT) WEST:LOC_LIMESTONE
+VERB: (ROOM=LOC_BARRENFRONT) ENTER:LOC_BARRENROOM
+VERB: (ROOM=LOC_BARRENFRONT) INWAR:LOC_BARRENROOM
+VERB: (ROOM=LOC_BARRENFRONT) EAST:LOC_BARRENROOM
+VERB: (ROOM=LOC_BARRENFRONT) VIEW:LOC_BREATHTAKING
+VERB: (ROOM=LOC_BARRENFRONT) UPWAR:LOC_LIMESTONE
+END ROOM LOC_BARRENFRONT
+ROOM: NAME:LOC_NECKBROKE SHORTDESC:{You are at the bottom of the pit with a broken neck.} LONGDESC:{You are at the bottom of the pit with a broken neck.}
+END ROOM LOC_NECKBROKE
+ROOM: NAME:LOC_ALIKE2 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE2) WEST:LOC_ALIKE1
+VERB: (ROOM=LOC_ALIKE2) SOUTH:LOC_ALIKE3
+VERB: (ROOM=LOC_ALIKE2) EAST:LOC_ALIKE4
+END ROOM LOC_ALIKE2
+ROOM: NAME:LOC_WINDOW1 SHORTDESC:{You're at window on pit.} LONGDESC:{You're at a low window overlooking a huge pit, which extends up out of\nsight.  A floor is indistinctly visible over 50 feet below.  Traces of\nwhite mist cover the floor of the pit, becoming thicker to the right.\nMarks in the dust around the window would seem to indicate that\nsomeone has been here recently.  Directly across the pit from you and\n25 feet away there is a similar window looking into a lighted room.  A\nshadowy figure can be seen there peering back at you.}
+VERB: (ROOM=LOC_WINDOW1) Y:LOC_Y2
+VERB: (ROOM=LOC_WINDOW1) JUMP:LOC_NECKBROKE
+VERB: (ROOM=LOC_WINDOW1) EAST:LOC_Y2
+END ROOM LOC_WINDOW1
+ROOM: NAME:LOC_WINDOW2 SHORTDESC:{You're at window on pit.} LONGDESC:{You're at a low window overlooking a huge pit, which extends up out of\nsight.  A floor is indistinctly visible over 50 feet below.  Traces of\nwhite mist cover the floor of the pit, becoming thicker to the left.\nMarks in the dust around the window would seem to indicate that\nsomeone has been here recently.  Directly across the pit from you and\n25 feet away there is a similar window looking into a lighted room.  A\nshadowy figure can be seen there peering back at you.}
+VERB: (ROOM=LOC_WINDOW2) WEST:LOC_THREEJUNCTION
+VERB: (ROOM=LOC_WINDOW2) JUMP:LOC_NECKBROKE
+END ROOM LOC_WINDOW2
+ROOM: NAME:LOC_SLAB SHORTDESC:{You're in Slab Room.} LONGDESC:{You are in a large low circular chamber whose floor is an immense slab\nfallen from the ceiling (Slab Room).  East and west there once were\nlarge passages, but they are now filled with boulders.  Low small\npassages go north and south, and the south one quickly bends west\naround the boulders.}
+VERB: (ROOM=LOC_SLAB) NORTH:LOC_BEDQUILT
+VERB: (ROOM=LOC_SLAB) CLIMB:LOC_SECRET1
+VERB: (ROOM=LOC_SLAB) SOUTH:LOC_WESTEND
+VERB: (ROOM=LOC_SLAB) UPWAR:LOC_SECRET1
+END ROOM LOC_SLAB
+ROOM: NAME:LOC_ALIKE9 SHORTDESC:{You are in a maze of twisty little passages, all alike.} LONGDESC:{You are in a maze of twisty little passages, all alike.}
+VERB: (ROOM=LOC_ALIKE9) NORTH:LOC_ALIKE8
+VERB: (ROOM=LOC_ALIKE9) WEST:LOC_ALIKE7
+VERB: (ROOM=LOC_ALIKE9) SOUTH:LOC_DEADEND4
+END ROOM LOC_ALIKE9
+ROOM: NAME:LOC_NOWHERE SHORTDESC:{!!null} LONGDESC:{!!null}
+END ROOM LOC_NOWHERE
+ROOM: NAME:LOC_STOREROOM SHORTDESC:{You are in the ogre's storeroom.  The only exit is to the south.} LONGDESC:{You are in the ogre's storeroom.  The only exit is to the south.}
+VERB: (ROOM=LOC_STOREROOM) SOUTH:LOC_LARGE
+VERB: (ROOM=LOC_STOREROOM) OUT:LOC_LARGE
+END ROOM LOC_STOREROOM
+ROOM: NAME:LOC_SOFTROOM SHORTDESC:{You're in Soft Room.} LONGDESC:{You are in the Soft Room.  The walls are covered with heavy curtains,\nthe floor with a thick pile carpet.  Moss covers the ceiling.}
+VERB: (ROOM=LOC_SOFTROOM) WEST:LOC_SWISSCHEESE
+VERB: (ROOM=LOC_SOFTROOM) OUT:LOC_SWISSCHEESE
+END ROOM LOC_SOFTROOM
+ROOM: NAME:LOC_GRUESOME SHORTDESC:{There is now one more gruesome aspect to the spectacular vista.} LONGDESC:{There is now one more gruesome aspect to the spectacular vista.}
+END ROOM LOC_GRUESOME
+ROOM: NAME:LOC_CLIMBSTALK SHORTDESC:{You clamber up the plant and scurry through the hole at the top.} LONGDESC:{You clamber up the plant and scurry through the hole at the top.}
+END ROOM LOC_CLIMBSTALK
+ROOM: NAME:LOC_CLIFFTOP SHORTDESC:{Just as you reach the top, your foot slips on a loose rock and you
+make one last desperate grab.  Your luck holds, as does your grip.
+With an enormous heave, you lift yourself to the ledge above.} LONGDESC:{Just as you reach the top, your foot slips on a loose rock and you\nmake one last desperate grab.  Your luck holds, as does your grip.\nWith an enormous heave, you lift yourself to the ledge above.}
+END ROOM LOC_CLIFFTOP
+ROOM: NAME:LOC_RESBOTTOM SHORTDESC:{You're at bottom of reservoir.} LONGDESC:{You are walking across the bottom of the reservoir.  Walls of water\nrear up on either side.  The roar of the water cascading past is\nnearly deafening, and the mist is so thick you can barely see.}
+VERB: (ROOM=LOC_RESBOTTOM) NORTH:LOC_RESNORTH
+VERB: (ROOM=LOC_RESBOTTOM) SOUTH:LOC_RESERVOIR
+END ROOM LOC_RESBOTTOM
+ROOM: NAME:LOC_TIGHTPLACE SHORTDESC:{The canyon here becomes too tight to go further south.} LONGDESC:{The canyon here becomes too tight to go further south.}
+VERB: (ROOM=LOC_TIGHTPLACE) NORTH:LOC_WIDEPLACE
+END ROOM LOC_TIGHTPLACE
+ROOM: NAME:LOC_SWISSCHEESE SHORTDESC:{You're in Swiss Cheese Room.} LONGDESC:{You are in a room whose walls resemble Swiss cheese.  Obvious passages\ngo west, east, ne, and nw.  Part of the room is occupied by a large\nbedrock block.}
+VERB: (ROOM=LOC_SWISSCHEESE) ORIEN:LOC_ORIENTAL
+VERB: (ROOM=LOC_SWISSCHEESE) NE:LOC_BEDQUILT
+VERB: (ROOM=LOC_SWISSCHEESE) WEST:LOC_EASTEND
+VERB: (ROOM=LOC_SWISSCHEESE) CANYO:LOC_TALL
+VERB: (ROOM=LOC_SWISSCHEESE) EAST:LOC_SOFTROOM
+END ROOM LOC_SWISSCHEESE
+ROOM: NAME:LOC_NOCLIMB SHORTDESC:{There is nothing here to climb.  Use "up" or "out" to leave the pit.} LONGDESC:{There is nothing here to climb.  Use "up" or "out" to leave the pit.}
+END ROOM LOC_NOCLIMB
+ROOM: NAME:LOC_EASTPIT SHORTDESC:{You're in east pit.} LONGDESC:{You are at the bottom of the eastern pit in the Twopit Room.  There is\na small pool of oil in one corner of the pit.}
+VERB: (ROOM=LOC_EASTPIT) UPWAR:LOC_EASTEND
+VERB: (ROOM=LOC_EASTPIT) OUT:LOC_EASTEND
+END ROOM LOC_EASTPIT
+ROOM: NAME:LOC_START SHORTDESC:{You're in front of building.} LONGDESC:{You are standing at the end of a road before a small brick building.\nAround you is a forest.  A small stream flows out of the building and\ndown a gully.}
+VERB: (ROOM=LOC_START) DOWN:LOC_VALLEY
+VERB: (ROOM=LOC_START) ROAD:LOC_HILL
+VERB: (ROOM=LOC_START) WEST:LOC_HILL
+VERB: (ROOM=LOC_START) BUILD:LOC_BUILDING
+VERB: (ROOM=LOC_START) FORES:LOC_FOREST1
+VERB: (ROOM=LOC_START) ENTER:LOC_BUILDING
+VERB: (ROOM=LOC_START) INWAR:LOC_BUILDING
+VERB: (ROOM=LOC_START) DOWNS:LOC_VALLEY
+VERB: (ROOM=LOC_START) STREA:LOC_VALLEY
+VERB: (ROOM=LOC_START) NORTH:LOC_FOREST1
+VERB: (ROOM=LOC_START) GULLY:LOC_VALLEY
+VERB: (ROOM=LOC_START) SOUTH:LOC_VALLEY
+VERB: (ROOM=LOC_START) DEPRE:LOC_GRATE
+VERB: (ROOM=LOC_START) EAST:LOC_BUILDING
+VERB: (ROOM=LOC_START) UPWAR:LOC_HILL
+END ROOM LOC_START
+ROOM: NAME:LOC_REACHDEAD SHORTDESC:{You have reached a dead end.} LONGDESC:{You have reached a dead end.}
+VERB: (ROOM=LOC_REACHDEAD) CRAWL:LOC_CLIFFLEDGE
+VERB: (ROOM=LOC_REACHDEAD) SW:LOC_CLIFFLEDGE
+VERB: (ROOM=LOC_REACHDEAD) OUT:LOC_CLIFFLEDGE
+END ROOM LOC_REACHDEAD
+ROOM: NAME:LOC_AWKWARD SHORTDESC:{You are in an awkward sloping east/west canyon.} LONGDESC:{You are in an awkward sloping east/west canyon.}
+VERB: (ROOM=LOC_AWKWARD) DOWN:LOC_DEBRIS
+VERB: (ROOM=LOC_AWKWARD) DEBRI:LOC_DEBRIS
+VERB: (ROOM=LOC_AWKWARD) WEST:LOC_BIRD
+VERB: (ROOM=LOC_AWKWARD) INWAR:LOC_BIRD
+VERB: (ROOM=LOC_AWKWARD) PIT:LOC_PITTOP
+VERB: (ROOM=LOC_AWKWARD) ENTRA:LOC_BELOWGRATE
+VERB: (ROOM=LOC_AWKWARD) DEPRE:LOC_GRATE
+VERB: (ROOM=LOC_AWKWARD) EAST:LOC_DEBRIS
+VERB: (ROOM=LOC_AWKWARD) UPWAR:LOC_BIRD
+END ROOM LOC_AWKWARD
+ROOM: NAME:LOC_SMALLPITBRINK SHORTDESC:{You're at brink of small pit.} LONGDESC:{You are on the brink of a small clean climbable pit.  A crawl leads\nwest.}
+VERB: (ROOM=LOC_SMALLPITBRINK) CRAWL:LOC_BROKEN
+VERB: (ROOM=LOC_SMALLPITBRINK) DOWN:LOC_SMALLPIT
+VERB: (ROOM=LOC_SMALLPITBRINK) CLIMB:LOC_SMALLPIT
+VERB: (ROOM=LOC_SMALLPITBRINK) WEST:LOC_BROKEN
+VERB: (ROOM=LOC_SMALLPITBRINK) PIT:LOC_SMALLPIT
+END ROOM LOC_SMALLPITBRINK
+ROOM: NAME:LOC_MIRRORCANYON SHORTDESC:{You're in Mirror Canyon.} LONGDESC:{You are in a north/south canyon about 25 feet across.  The floor is\ncovered by white mist seeping in from the north.  The walls extend\nupward for well over 100 feet.  Suspended from some unseen point far\nabove you, an enormous two-sided mirror is hanging parallel to and\nmidway between the canyon walls.  (The mirror is obviously provided\nfor the use of the dwarves who, as you know, are extremely vain.)  A\nsmall window can be seen in either wall, some fifty feet up.}
+VERB: (ROOM=LOC_MIRRORCANYON) NORTH:LOC_RESERVOIR
+VERB: (ROOM=LOC_MIRRORCANYON) RESER:LOC_RESERVOIR
+VERB: (ROOM=LOC_MIRRORCANYON) SOUTH:LOC_SECRET1
+END ROOM LOC_MIRRORCANYON
+ROOM: NAME:LOC_RESNORTH SHORTDESC:{You're north of reservoir.} LONGDESC:{You are at the northern edge of the reservoir.  A northwest passage\nleads sharply up from here.}
+VERB: (ROOM=LOC_RESNORTH) NW:LOC_TREACHEROUS
+VERB: (ROOM=LOC_RESNORTH) SOUTH:LOC_RESBOTTOM
+VERB: (ROOM=LOC_RESNORTH) UPWAR:LOC_TREACHEROUS
+VERB: (ROOM=LOC_RESNORTH) OUT:LOC_TREACHEROUS
+END ROOM LOC_RESNORTH
+ROOM: NAME:LOC_EASTBANK SHORTDESC:{You're on east bank of fissure.} LONGDESC:{You are on the east bank of a fissure slicing clear across the hall.\nThe mist is quite thick here, and the fissure is too wide to jump.}
+VERB: (ROOM=LOC_EASTBANK) OVER:LOC_WESTBANK
+VERB: (ROOM=LOC_EASTBANK) HALL:LOC_MISTHALL
+VERB: (ROOM=LOC_EASTBANK) FORWA:LOC_NOMAKE
+VERB: (ROOM=LOC_EASTBANK) EAST:LOC_MISTHALL
+END ROOM LOC_EASTBANK
+ROOM: NAME:LOC_RESERVOIR SHORTDESC:{You're at reservoir.} LONGDESC:{You are at the edge of a large underground reservoir.  An opaque cloud\nof white mist fills the room and rises rapidly upward.  The lake is\nfed by a stream, which tumbles out of a hole in the wall about 10 feet\noverhead and splashes noisily into the water somewhere within the\nmist.  There is a passage going back toward the south.}
+VERB: (ROOM=LOC_RESERVOIR) NORTH:LOC_RESBOTTOM
+VERB: (ROOM=LOC_RESERVOIR) SOUTH:LOC_MIRRORCANYON
+VERB: (ROOM=LOC_RESERVOIR) OUT:LOC_MIRRORCANYON
+END ROOM LOC_RESERVOIR
+ROOM: NAME:LOC_LONGWEST SHORTDESC:{You're at west end of long hall.} LONGDESC:{You are at the west end of a very long featureless hall.  The hall\njoins up with a narrow north/south passage.}
+VERB: (ROOM=LOC_LONGWEST) NORTH:LOC_CROSSOVER
+VERB: (ROOM=LOC_LONGWEST) SOUTH:LOC_DIFFERENT1
+VERB: (ROOM=LOC_LONGWEST) EAST:LOC_LONGEAST
+END ROOM LOC_LONGWEST
+ROOM: NAME:LOC_HILL SHORTDESC:{You're at hill in road.} LONGDESC:{You have walked up a hill, still in the forest.  The road slopes back\ndown the other side of the hill.  There is a building in the distance.}
+VERB: (ROOM=LOC_HILL) NORTH:LOC_FOREST20
+VERB: (ROOM=LOC_HILL) BUILD:LOC_START
+VERB: (ROOM=LOC_HILL) WEST:LOC_ROADEND
+VERB: (ROOM=LOC_HILL) FORES:LOC_FOREST13
+VERB: (ROOM=LOC_HILL) SOUTH:LOC_FOREST13
+VERB: (ROOM=LOC_HILL) EAST:LOC_START
+END ROOM LOC_HILL
+ROOM: NAME:LOC_MISTY SHORTDESC:{You're in misty cavern.} LONGDESC:{You are following a wide path around the outer edge of a large cavern.\nFar below, through a heavy white mist, strange splashing noises can be\nheard.  The mist rises up through a fissure in the ceiling.  The path\nexits to the south and west.}
+VERB: (ROOM=LOC_MISTY) ORIEN:LOC_ORIENTAL
+VERB: (ROOM=LOC_MISTY) WEST:LOC_ALCOVE
+VERB: (ROOM=LOC_MISTY) SOUTH:LOC_ORIENTAL
+END ROOM LOC_MISTY
+ROOM: NAME:LOC_SLIT SHORTDESC:{You're at slit in streambed.} LONGDESC:{At your feet all the water of the stream splashes into a 2-inch slit\nin the rock.  Downstream the streambed is bare rock.}
+VERB: (ROOM=LOC_SLIT) BED:LOC_GRATE
+VERB: (ROOM=LOC_SLIT) DOWNS:LOC_GRATE
+VERB: (ROOM=LOC_SLIT) UPSTR:LOC_VALLEY
+VERB: (ROOM=LOC_SLIT) NORTH:LOC_VALLEY
+VERB: (ROOM=LOC_SLIT) BUILD:LOC_START
+VERB: (ROOM=LOC_SLIT) WEST:LOC_FOREST10
+VERB: (ROOM=LOC_SLIT) FORES:LOC_FOREST6
+VERB: (ROOM=LOC_SLIT) SOUTH:LOC_GRATE
+VERB: (ROOM=LOC_SLIT) DEPRE:LOC_GRATE
+VERB: (ROOM=LOC_SLIT) EAST:LOC_FOREST6
+END ROOM LOC_SLIT
+ROOM: NAME:LOC_BOULDERS1 SHORTDESC:{The canyon runs into a mass of boulders -- dead end.} LONGDESC:{The canyon runs into a mass of boulders -- dead end.}
+VERB: (ROOM=LOC_BOULDERS1) SOUTH:LOC_TALL
+END ROOM LOC_BOULDERS1
+ROOM: NAME:LOC_BOULDERS2 SHORTDESC:{You're in Chamber of Boulders.} LONGDESC:{You are in a small chamber filled with large boulders.  The walls are\nvery warm, causing the air in the room to be almost stifling from the\nheat.  The only exit is a crawl heading west, through which is coming\na low rumbling.}
+VERB: (ROOM=LOC_BOULDERS2) CRAWL:LOC_WARMWALLS
+VERB: (ROOM=LOC_BOULDERS2) FORK:LOC_FORK
+VERB: (ROOM=LOC_BOULDERS2) WEST:LOC_WARMWALLS
+VERB: (ROOM=LOC_BOULDERS2) VIEW:LOC_BREATHTAKING
+VERB: (ROOM=LOC_BOULDERS2) OUT:LOC_WARMWALLS
+END ROOM LOC_BOULDERS2
+ROOM: NAME:LOC_CLIFFBASE SHORTDESC:{You're at base of cliff.} LONGDESC:{You are at the base of a nearly vertical cliff.  There are some\nslim footholds which would enable you to climb up, but it looks\nextremely dangerous.  Here at the base of the cliff lie the remains\nof several earlier adventurers who apparently failed to make it.}
+VERB: (ROOM=LOC_CLIFFBASE) DOWN:LOC_STEEP
+VERB: (ROOM=LOC_CLIFFBASE) SE:LOC_STEEP
+VERB: (ROOM=LOC_CLIFFBASE) CLIMB:LOC_CLIFFACE
+VERB: (ROOM=LOC_CLIFFBASE) UPWAR:LOC_CLIFFACE
+END ROOM LOC_CLIFFBASE
+ROOM: NAME:LOC_VALLEY SHORTDESC:{You're in valley.} LONGDESC:{You are in a valley in the forest beside a stream tumbling along a\nrocky bed.}
+VERB: (ROOM=LOC_VALLEY) DOWNS:LOC_SLIT
+VERB: (ROOM=LOC_VALLEY) DOWN:LOC_SLIT
+VERB: (ROOM=LOC_VALLEY) UPSTR:LOC_START
+VERB: (ROOM=LOC_VALLEY) NORTH:LOC_START
+VERB: (ROOM=LOC_VALLEY) BUILD:LOC_START
+VERB: (ROOM=LOC_VALLEY) WEST:LOC_FOREST12
+VERB: (ROOM=LOC_VALLEY) FORES:LOC_FOREST6
+VERB: (ROOM=LOC_VALLEY) SOUTH:LOC_SLIT
+VERB: (ROOM=LOC_VALLEY) DEPRE:LOC_GRATE
+VERB: (ROOM=LOC_VALLEY) EAST:LOC_FOREST6
+END ROOM LOC_VALLEY
+ROOM: NAME:LOC_ROUGHHEWN SHORTDESC:{You are in a long, rough-hewn, north/south corridor.} LONGDESC:{You are in a long, rough-hewn, north/south corridor.}
+VERB: (ROOM=LOC_ROUGHHEWN) NORTH:LOC_DEADEND13
+VERB: (ROOM=LOC_ROUGHHEWN) SOUTH:LOC_LARGE
+END ROOM LOC_ROUGHHEWN
+ROOM: NAME:LOC_WITTSEND SHORTDESC:{You're at Witt's End.} LONGDESC:{You are at Witt's End.  Passages lead off in *ALL* directions.}
+VERB: (ROOM=LOC_WITTSEND) EAST:LOC_ANTEROOM
+END ROOM LOC_WITTSEND
+ROOM: NAME:LOC_WATERFALL SHORTDESC:{You're in cavern with waterfall.} LONGDESC:{You are in a magnificent cavern with a rushing stream, which cascades\nover a sparkling waterfall into a roaring whirlpool which disappears\nthrough a hole in the floor.  Passages exit to the south and west.}
+VERB: (ROOM=LOC_WATERFALL) WEST:LOC_INCLINE
+VERB: (ROOM=LOC_WATERFALL) SOUTH:LOC_IMMENSE
+VERB: (ROOM=LOC_WATERFALL) OUT:LOC_IMMENSE
+VERB: (ROOM=LOC_WATERFALL) GIANT:LOC_GIANTROOM
+END ROOM LOC_WATERFALL
+ROOM: NAME:LOC_ARCHED SHORTDESC:{You're in arched hall.} LONGDESC:{You are in an arched hall.  A coral passage once continued up and east\nfrom here, but is now blocked by debris.  The air smells of sea water.}
+VERB: (ROOM=LOC_ARCHED) DOWN:LOC_SHELLROOM
+VERB: (ROOM=LOC_ARCHED) SHELL:LOC_SHELLROOM
+VERB: (ROOM=LOC_ARCHED) OUT:LOC_SHELLROOM
+END ROOM LOC_ARCHED
+ROOM: NAME:LOC_FLOORHOLE SHORTDESC:{You're in n/s passage above e/w passage.} LONGDESC:{You are in a low n/s passage at a hole in the floor.  The hole goes\ndown to an e/w passage.}
+VERB: (ROOM=LOC_FLOORHOLE) HOLE:LOC_BROKEN
+VERB: (ROOM=LOC_FLOORHOLE) DOWN:LOC_BROKEN
+VERB: (ROOM=LOC_FLOORHOLE) NORTH:LOC_Y2
+VERB: (ROOM=LOC_FLOORHOLE) HALL:LOC_KINGHALL
+VERB: (ROOM=LOC_FLOORHOLE) Y:LOC_Y2
+VERB: (ROOM=LOC_FLOORHOLE) SOUTH:LOC_KINGHALL
+VERB: (ROOM=LOC_FLOORHOLE) OUT:LOC_KINGHALL
+END ROOM LOC_FLOORHOLE
+ROOM: NAME:LOC_TREACHEROUS SHORTDESC:{You are scrambling along a treacherously steep, rocky passage.} LONGDESC:{You are scrambling along a treacherously steep, rocky passage.}
+VERB: (ROOM=LOC_TREACHEROUS) DOWN:LOC_RESNORTH
+VERB: (ROOM=LOC_TREACHEROUS) SE:LOC_RESNORTH
+VERB: (ROOM=LOC_TREACHEROUS) NW:LOC_STEEP
+VERB: (ROOM=LOC_TREACHEROUS) UPWAR:LOC_STEEP
+END ROOM LOC_TREACHEROUS
+ROOM: NAME:LOC_IMMENSE SHORTDESC:{You are at one end of an immense north/south passage.} LONGDESC:{You are at one end of an immense north/south passage.}
+VERB: (ROOM=LOC_IMMENSE) NORTH:LOC_WATERFALL
+VERB: (ROOM=LOC_IMMENSE) PASSA:LOC_GIANTROOM
+VERB: (ROOM=LOC_IMMENSE) ENTER:LOC_WATERFALL
+VERB: (ROOM=LOC_IMMENSE) SOUTH:LOC_GIANTROOM
+VERB: (ROOM=LOC_IMMENSE) CAVER:LOC_WATERFALL
+VERB: (ROOM=LOC_IMMENSE) GIANT:LOC_GIANTROOM
+END ROOM LOC_IMMENSE
+ROOM: NAME:LOC_DOME SHORTDESC:{The dome is unclimbable.} LONGDESC:{The dome is unclimbable.}
+END ROOM LOC_DOME
+ROOM: NAME:LOC_CRACK SHORTDESC:{The crack is far too small for you to follow.  At its widest it is
+barely wide enough to admit your foot.} LONGDESC:{The crack is far too small for you to follow.  At its widest it is\nbarely wide enough to admit your foot.}
+END ROOM LOC_CRACK
+ROOM: NAME:LOC_SNAKEBLOCK SHORTDESC:{You can't get by the snake.} LONGDESC:{You can't get by the snake.}
+END ROOM LOC_SNAKEBLOCK
+ROOM: NAME:LOC_BUILDING SHORTDESC:{You're inside building.} LONGDESC:{You are inside a building, a well house for a large spring.}
+VERB: (ROOM=LOC_BUILDING) PLUGH:LOC_FOOF3
+VERB: (ROOM=LOC_BUILDING) DOWNS:LOC_SEWER
+VERB: (ROOM=LOC_BUILDING) STREA:LOC_SEWER
+VERB: (ROOM=LOC_BUILDING) WEST:LOC_START
+VERB: (ROOM=LOC_BUILDING) OUTDO:LOC_START
+VERB: (ROOM=LOC_BUILDING) XYZZY:LOC_FOOF1
+VERB: (ROOM=LOC_BUILDING) OUT:LOC_START
+END ROOM LOC_BUILDING
+ROOM: NAME:LOC_DEADCRAWL SHORTDESC:{Dead end crawl.} LONGDESC:{Dead end crawl.}
+VERB: (ROOM=LOC_DEADCRAWL) CRAWL:LOC_LOWROOM
+VERB: (ROOM=LOC_DEADCRAWL) SOUTH:LOC_LOWROOM
+VERB: (ROOM=LOC_DEADCRAWL) OUT:LOC_LOWROOM
+END ROOM LOC_DEADCRAWL
+ROOM: NAME:LOC_ORIENTAL SHORTDESC:{You're in Oriental Room.} LONGDESC:{This is the Oriental Room.  Ancient oriental cave drawings cover the\nwalls.  A gently sloping passage leads upward to the north, another\npassage leads se, and a hands and knees crawl leads west.}
+VERB: (ROOM=LOC_ORIENTAL) CRAWL:LOC_LOWROOM
+VERB: (ROOM=LOC_ORIENTAL) SE:LOC_SWISSCHEESE
+VERB: (ROOM=LOC_ORIENTAL) NORTH:LOC_MISTY
+VERB: (ROOM=LOC_ORIENTAL) WEST:LOC_LOWROOM
+VERB: (ROOM=LOC_ORIENTAL) CAVER:LOC_MISTY
+VERB: (ROOM=LOC_ORIENTAL) UPWAR:LOC_MISTY
+END ROOM LOC_ORIENTAL
+ROOM: NAME:LOC_EASTEND SHORTDESC:{You're at east end of Twopit Room.} LONGDESC:{You are at the east end of the Twopit Room.  The floor here is\nlittered with thin rock slabs, which make it easy to descend the pits.\nThere is a path here bypassing the pits to connect passages from east\nand west.  There are holes all over, but the only big one is on the\nwall directly over the west pit where you can't get to it.}
+VERB: (ROOM=LOC_EASTEND) DOWN:LOC_EASTPIT
+VERB: (ROOM=LOC_EASTEND) WEST:LOC_WESTEND
+VERB: (ROOM=LOC_EASTEND) ACROS:LOC_WESTEND
+VERB: (ROOM=LOC_EASTEND) PIT:LOC_EASTPIT
+VERB: (ROOM=LOC_EASTEND) EAST:LOC_SWISSCHEESE
+END ROOM LOC_EASTEND
+ROOM: NAME:LOC_SW SHORTDESC:{You're at sw end.} LONGDESC:{You are at the southwest end of the repository.  To one side is a pit\nfull of fierce green snakes.  On the other side is a row of small\nwicker cages, each of which contains a little sulking bird.  In one\ncorner is a bundle of black rods with rusty marks on their ends.  A\nlarge number of velvet pillows are scattered about on the floor.  A\nvast mirror stretches off to the northeast.  At your feet is a large\nsteel grate, next to which is a sign that reads, "Treasure Vault.\nKeys in main office."}
+VERB: (ROOM=LOC_SW) NE:LOC_NE
+END ROOM LOC_SW
+ROOM: NAME:LOC_NOMAKE SHORTDESC:{You didn't make it.} LONGDESC:{You didn't make it.}
+END ROOM LOC_NOMAKE
+ROOM: NAME:LOC_FOOTSLIP SHORTDESC:{Just as you reach the top, your foot slips on a loose rock and you
+tumble several hundred feet to join the other unlucky adventurers.} LONGDESC:{Just as you reach the top, your foot slips on a loose rock and you\ntumble several hundred feet to join the other unlucky adventurers.}
+END ROOM LOC_FOOTSLIP
+ROOM: NAME:LOC_LOWROOM SHORTDESC:{You're in large low room.} LONGDESC:{You are in a large low room.  Crawls lead north, se, and sw.}
+VERB: (ROOM=LOC_LOWROOM) ORIEN:LOC_ORIENTAL
+VERB: (ROOM=LOC_LOWROOM) SE:LOC_ORIENTAL
+VERB: (ROOM=LOC_LOWROOM) SW:LOC_WINDING
+VERB: (ROOM=LOC_LOWROOM) NORTH:LOC_DEADCRAWL
+VERB: (ROOM=LOC_LOWROOM) BEDQU:LOC_BEDQUILT
+END ROOM LOC_LOWROOM
+ROOM: NAME:LOC_CLIFFLEDGE SHORTDESC:{You're at top of cliff.} LONGDESC:{You are on a small ledge at the top of a nearly vertical cliff.\nThere is a low crawl leading off to the northeast.}
+VERB: (ROOM=LOC_CLIFFLEDGE) CRAWL:LOC_REACHDEAD
+VERB: (ROOM=LOC_CLIFFLEDGE) DOWN:LOC_CLIFFACE
+VERB: (ROOM=LOC_CLIFFLEDGE) CLIMB:LOC_CLIFFACE
+VERB: (ROOM=LOC_CLIFFLEDGE) NE:LOC_REACHDEAD
+END ROOM LOC_CLIFFLEDGE
+ROOM: NAME:LOC_MISTWEST SHORTDESC:{You're at west end of Hall of Mists.} LONGDESC:{You are at the west end of the Hall of Mists.  A low wide crawl\ncontinues west and another goes north.  To the south is a little\npassage 6 feet off the floor.}
+VERB: (ROOM=LOC_MISTWEST) CRAWL:LOC_LONGEAST
+VERB: (ROOM=LOC_MISTWEST) NORTH:LOC_PARALLEL2
+VERB: (ROOM=LOC_MISTWEST) PASSA:LOC_ALIKE1
+VERB: (ROOM=LOC_MISTWEST) CLIMB:LOC_ALIKE1
+VERB: (ROOM=LOC_MISTWEST) WEST:LOC_LONGEAST
+VERB: (ROOM=LOC_MISTWEST) SOUTH:LOC_ALIKE1
+VERB: (ROOM=LOC_MISTWEST) EAST:LOC_WESTBANK
+VERB: (ROOM=LOC_MISTWEST) UPWAR:LOC_ALIKE1
+END ROOM LOC_MISTWEST
+ROOM: NAME:LOC_CROSSOVER SHORTDESC:{You are at a crossover of a high n/s passage and a low e/w one.} LONGDESC:{You are at a crossover of a high n/s passage and a low e/w one.}
+VERB: (ROOM=LOC_CROSSOVER) NORTH:LOC_DEADEND7
+VERB: (ROOM=LOC_CROSSOVER) WEST:LOC_LONGEAST
+VERB: (ROOM=LOC_CROSSOVER) SOUTH:LOC_LONGWEST
+VERB: (ROOM=LOC_CROSSOVER) EAST:LOC_WESTSIDE
+END ROOM LOC_CROSSOVER
+ROOM: NAME:LOC_FOOF2 SHORTDESC:{>>Foof!<<} LONGDESC:{>>Foof!<<}
+END ROOM LOC_FOOF2
+ROOM: NAME:LOC_WINDING SHORTDESC:{You're in sloping corridor.} LONGDESC:{You are in a long winding corridor sloping out of sight in both\ndirections.}
+VERB: (ROOM=LOC_WINDING) DOWN:LOC_LOWROOM
+VERB: (ROOM=LOC_WINDING) UPWAR:LOC_SWCHASM
+END ROOM LOC_WINDING
+ROOM: NAME:LOC_FOOF1 SHORTDESC:{>>Foof!<<} LONGDESC:{>>Foof!<<}
+END ROOM LOC_FOOF1
+ROOM: NAME:LOC_BELOWGRATE SHORTDESC:{You're below the grate.} LONGDESC:{You are in a small chamber beneath a 3x3 steel grate to the surface.\nA low crawl over cobbles leads inward to the west.}
+VERB: (ROOM=LOC_BELOWGRATE) CRAWL:LOC_COBBLE
+VERB: (ROOM=LOC_BELOWGRATE) COBBL:LOC_COBBLE
+VERB: (ROOM=LOC_BELOWGRATE) DEBRI:LOC_DEBRIS
+VERB: (ROOM=LOC_BELOWGRATE) WEST:LOC_COBBLE
+VERB: (ROOM=LOC_BELOWGRATE) INWAR:LOC_COBBLE
+VERB: (ROOM=LOC_BELOWGRATE) PIT:LOC_PITTOP
+VERB: (ROOM=LOC_BELOWGRATE) UPWAR:LOC_GRATE
+VERB: (ROOM=LOC_BELOWGRATE) OUT:LOC_GRATE
+END ROOM LOC_BELOWGRATE
+ROOM: NAME:LOC_BEDQUILT SHORTDESC:{You're in Bedquilt.} LONGDESC:{You are in Bedquilt, a long east/west passage with holes everywhere.\nTo explore at random select north, south, up, or down.}
+VERB: (ROOM=LOC_BEDQUILT) DOWN:LOC_ANTEROOM
+VERB: (ROOM=LOC_BEDQUILT) NORTH:LOC_THREEJUNCTION
+VERB: (ROOM=LOC_BEDQUILT) WEST:LOC_SWISSCHEESE
+VERB: (ROOM=LOC_BEDQUILT) SLAB:LOC_SLAB
+VERB: (ROOM=LOC_BEDQUILT) EAST:LOC_COMPLEX
+VERB: (ROOM=LOC_BEDQUILT) UPWAR:LOC_DUSTY
+END ROOM LOC_BEDQUILT
+ROOM: NAME:LOC_NECHASM SHORTDESC:{You're on ne side of chasm.} LONGDESC:{ You are on the far side of the chasm.  A ne path leads away from the\n chasm on this side.}
+VERB: (ROOM=LOC_NECHASM) FORK:LOC_FORK
+VERB: (ROOM=LOC_NECHASM) BARRE:LOC_BARRENFRONT
+VERB: (ROOM=LOC_NECHASM) NE:LOC_CORRIDOR
+VERB: (ROOM=LOC_NECHASM) VIEW:LOC_BREATHTAKING
+END ROOM LOC_NECHASM
+ROOM: NAME:LOC_FOOF5 SHORTDESC:{>>Foof!<<} LONGDESC:{>>Foof!<<}
+END ROOM LOC_FOOF5
+ROOM: NAME:LOC_FOOF4 SHORTDESC:{>>Foof!<<} LONGDESC:{>>Foof!<<}
+END ROOM LOC_FOOF4
+ROOM: NAME:LOC_FOOF3 SHORTDESC:{>>Foof!<<} LONGDESC:{>>Foof!<<}
+END ROOM LOC_FOOF3
+ROOM: NAME:LOC_SHELLROOM SHORTDESC:{You're in Shell Room.} LONGDESC:{You're in a large room carved out of sedimentary rock.  The floor and\nwalls are littered with bits of shells embedded in the stone.  A\nshallow passage proceeds downward, and a somewhat steeper one leads\nup.  A low hands and knees passage enters from the south.}
+VERB: (ROOM=LOC_SHELLROOM) DOWN:LOC_SLOPING1
+VERB: (ROOM=LOC_SHELLROOM) HALL:LOC_ARCHED
+VERB: (ROOM=LOC_SHELLROOM) SOUTH:LOC_COMPLEX
+VERB: (ROOM=LOC_SHELLROOM) UPWAR:LOC_ARCHED
+END ROOM LOC_SHELLROOM
+ROOM: NAME:LOC_NUGGET SHORTDESC:{You're in nugget-of-gold room.} LONGDESC:{This is a low room with a crude note on the wall.  The note says,\n"You won't get it up the steps".}
+VERB: (ROOM=LOC_NUGGET) NORTH:LOC_MISTHALL
+VERB: (ROOM=LOC_NUGGET) HALL:LOC_MISTHALL
+VERB: (ROOM=LOC_NUGGET) OUT:LOC_MISTHALL
+END ROOM LOC_NUGGET
+ROOM: NAME:LOC_DEADEND5 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND5) UPWAR:LOC_ALIKE10
+VERB: (ROOM=LOC_DEADEND5) OUT:LOC_ALIKE10
+END ROOM LOC_DEADEND5
+ROOM: NAME:LOC_DIFFERENT10 SHORTDESC:{You are in a maze of little twisting passages, all different.} LONGDESC:{You are in a maze of little twisting passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT10) DOWN:LOC_DIFFERENT1
+VERB: (ROOM=LOC_DIFFERENT10) SE:LOC_DIFFERENT9
+VERB: (ROOM=LOC_DIFFERENT10) SW:LOC_DIFFERENT11
+VERB: (ROOM=LOC_DIFFERENT10) NORTH:LOC_DIFFERENT7
+VERB: (ROOM=LOC_DIFFERENT10) NE:LOC_DIFFERENT4
+VERB: (ROOM=LOC_DIFFERENT10) WEST:LOC_DIFFERENT6
+VERB: (ROOM=LOC_DIFFERENT10) NW:LOC_DIFFERENT2
+VERB: (ROOM=LOC_DIFFERENT10) SOUTH:LOC_DIFFERENT8
+VERB: (ROOM=LOC_DIFFERENT10) EAST:LOC_DIFFERENT3
+VERB: (ROOM=LOC_DIFFERENT10) UPWAR:LOC_DIFFERENT5
+END ROOM LOC_DIFFERENT10
+ROOM: NAME:LOC_DEADEND4 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND4) WEST:LOC_ALIKE9
+VERB: (ROOM=LOC_DEADEND4) OUT:LOC_ALIKE9
+END ROOM LOC_DEADEND4
+ROOM: NAME:LOC_BUILDING1 SHORTDESC:{} LONGDESC:{}
+END ROOM LOC_BUILDING1
+ROOM: NAME:LOC_DEADEND7 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND7) SOUTH:LOC_CROSSOVER
+VERB: (ROOM=LOC_DEADEND7) OUT:LOC_CROSSOVER
+END ROOM LOC_DEADEND7
+ROOM: NAME:LOC_THREEJUNCTION SHORTDESC:{You're at junction of three secret canyons.} LONGDESC:{You are in a secret canyon at a junction of three canyons, bearing\nnorth, south, and se.  The north one is as tall as the other two\ncombined.}
+VERB: (ROOM=LOC_THREEJUNCTION) SE:LOC_BEDQUILT
+VERB: (ROOM=LOC_THREEJUNCTION) NORTH:LOC_WINDOW2
+VERB: (ROOM=LOC_THREEJUNCTION) SOUTH:LOC_SECRET2
+END ROOM LOC_THREEJUNCTION
+ROOM: NAME:LOC_DEADEND6 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND6) EAST:LOC_PITBRINK
+VERB: (ROOM=LOC_DEADEND6) OUT:LOC_PITBRINK
+END ROOM LOC_DEADEND6
+ROOM: NAME:LOC_DIFFERENT11 SHORTDESC:{You are in a maze of little twisty passages, all different.} LONGDESC:{You are in a maze of little twisty passages, all different.}
+VERB: (ROOM=LOC_DIFFERENT11) DOWN:LOC_DIFFERENT7
+VERB: (ROOM=LOC_DIFFERENT11) SE:LOC_DIFFERENT8
+VERB: (ROOM=LOC_DIFFERENT11) SW:LOC_DIFFERENT1
+VERB: (ROOM=LOC_DIFFERENT11) NORTH:LOC_DIFFERENT6
+VERB: (ROOM=LOC_DIFFERENT11) WEST:LOC_DIFFERENT5
+VERB: (ROOM=LOC_DIFFERENT11) NE:LOC_DIFFERENT2
+VERB: (ROOM=LOC_DIFFERENT11) NW:LOC_DIFFERENT3
+VERB: (ROOM=LOC_DIFFERENT11) SOUTH:LOC_DIFFERENT10
+VERB: (ROOM=LOC_DIFFERENT11) EAST:LOC_DIFFERENT4
+VERB: (ROOM=LOC_DIFFERENT11) UPWAR:LOC_DIFFERENT9
+END ROOM LOC_DIFFERENT11
+ROOM: NAME:LOC_BIRD SHORTDESC:{You're in bird chamber.} LONGDESC:{You are in a splendid chamber thirty feet high.  The walls are frozen\nrivers of orange stone.  An awkward canyon and a good passage exit\nfrom east and west sides of the chamber.}
+VERB: (ROOM=LOC_BIRD) DEBRI:LOC_DEBRIS
+VERB: (ROOM=LOC_BIRD) PASSA:LOC_PITTOP
+VERB: (ROOM=LOC_BIRD) WEST:LOC_PITTOP
+VERB: (ROOM=LOC_BIRD) CANYO:LOC_AWKWARD
+VERB: (ROOM=LOC_BIRD) PIT:LOC_PITTOP
+VERB: (ROOM=LOC_BIRD) ENTRA:LOC_BELOWGRATE
+VERB: (ROOM=LOC_BIRD) DEPRE:LOC_GRATE
+VERB: (ROOM=LOC_BIRD) EAST:LOC_AWKWARD
+END ROOM LOC_BIRD
+ROOM: NAME:LOC_DEADEND1 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND1) WEST:LOC_ALIKE4
+VERB: (ROOM=LOC_DEADEND1) OUT:LOC_ALIKE4
+END ROOM LOC_DEADEND1
+ROOM: NAME:LOC_PLOVER SHORTDESC:{You're in Plover Room.} LONGDESC:{You're in a small chamber lit by an eerie green light.  An extremely\nnarrow tunnel exits to the west.  A dark corridor leads ne.}
+VERB: (ROOM=LOC_PLOVER) WEST:LOC_ALCOVE
+VERB: (ROOM=LOC_PLOVER) NE:LOC_DARKROOM
+VERB: (ROOM=LOC_PLOVER) PLOVE:LOC_FOOF6
+VERB: (ROOM=LOC_PLOVER) DARK:LOC_DARKROOM
+END ROOM LOC_PLOVER
+ROOM: NAME:LOC_DEADEND3 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND3) UPWAR:LOC_ALIKE3
+VERB: (ROOM=LOC_DEADEND3) OUT:LOC_ALIKE3
+END ROOM LOC_DEADEND3
+ROOM: NAME:LOC_DEADEND2 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND2) EAST:LOC_ALIKE4
+VERB: (ROOM=LOC_DEADEND2) OUT:LOC_ALIKE4
+END ROOM LOC_DEADEND2
+ROOM: NAME:LOC_WESTPIT SHORTDESC:{You're in west pit.} LONGDESC:{You are at the bottom of the western pit in the Twopit Room.  There is\na large hole in the wall about 25 feet above you.}
+VERB: (ROOM=LOC_WESTPIT) CLIMB:LOC_CLIMBSTALK
+VERB: (ROOM=LOC_WESTPIT) UPWAR:LOC_WESTEND
+VERB: (ROOM=LOC_WESTPIT) OUT:LOC_WESTEND
+END ROOM LOC_WESTPIT
+ROOM: NAME:LOC_TALL SHORTDESC:{You are in a tall e/w canyon.  A low tight crawl goes 3 feet north and
+seems to open up.} LONGDESC:{You are in a tall e/w canyon.  A low tight crawl goes 3 feet north and\nseems to open up.}
+VERB: (ROOM=LOC_TALL) CRAWL:LOC_SWISSCHEESE
+VERB: (ROOM=LOC_TALL) NORTH:LOC_SWISSCHEESE
+VERB: (ROOM=LOC_TALL) WEST:LOC_BOULDERS1
+VERB: (ROOM=LOC_TALL) EAST:LOC_WIDEPLACE
+END ROOM LOC_TALL
+ROOM: NAME:LOC_GRATE SHORTDESC:{You're outside grate.} LONGDESC:{You are in a 20-foot depression floored with bare dirt.  Set into the\ndirt is a strong steel grate mounted in concrete.  A dry streambed\nleads into the depression.}
+VERB: (ROOM=LOC_GRATE) DOWN:LOC_BELOWGRATE
+VERB: (ROOM=LOC_GRATE) UPSTR:LOC_SLIT
+VERB: (ROOM=LOC_GRATE) NORTH:LOC_SLIT
+VERB: (ROOM=LOC_GRATE) WEST:LOC_FOREST9
+VERB: (ROOM=LOC_GRATE) BUILD:LOC_START
+VERB: (ROOM=LOC_GRATE) FORES:LOC_FOREST7
+VERB: (ROOM=LOC_GRATE) ENTER:LOC_BELOWGRATE
+VERB: (ROOM=LOC_GRATE) INWAR:LOC_BELOWGRATE
+VERB: (ROOM=LOC_GRATE) SOUTH:LOC_FOREST10
+VERB: (ROOM=LOC_GRATE) GULLY:LOC_SLIT
+VERB: (ROOM=LOC_GRATE) EAST:LOC_FOREST7
+END ROOM LOC_GRATE
+ROOM: NAME:LOC_ANTEROOM SHORTDESC:{You're in anteroom.} LONGDESC:{You are in an anteroom leading to a large passage to the east.  Small\npassages go west and up.  The remnants of recent digging are evident.\nA sign in midair here says "Cave under construction beyond this point.\nProceed at own risk.  [Witt Construction Company]"}
+VERB: (ROOM=LOC_ANTEROOM) WEST:LOC_BEDQUILT
+VERB: (ROOM=LOC_ANTEROOM) EAST:LOC_WITTSEND
+VERB: (ROOM=LOC_ANTEROOM) UPWAR:LOC_COMPLEX
+END ROOM LOC_ANTEROOM
+ROOM: NAME:LOC_FOREST8 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST8) NORTH:LOC_FOREST22
+VERB: (ROOM=LOC_FOREST8) WEST:LOC_FOREST11
+VERB: (ROOM=LOC_FOREST8) SOUTH:LOC_FOREST7
+VERB: (ROOM=LOC_FOREST8) EAST:LOC_FOREST9
+END ROOM LOC_FOREST8
+ROOM: NAME:LOC_PARALLEL2 SHORTDESC:{You have crawled through a very low wide passage parallel to and north
+of the Hall of Mists.} LONGDESC:{You have crawled through a very low wide passage parallel to and north\nof the Hall of Mists.}
+END ROOM LOC_PARALLEL2
+ROOM: NAME:LOC_FOREST9 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST9) NORTH:LOC_FOREST10
+VERB: (ROOM=LOC_FOREST9) WEST:LOC_FOREST8
+VERB: (ROOM=LOC_FOREST9) SOUTH:LOC_GRATE
+VERB: (ROOM=LOC_FOREST9) EAST:LOC_FOREST11
+END ROOM LOC_FOREST9
+ROOM: NAME:LOC_PARALLEL1 SHORTDESC:{You have crawled through a very low wide passage parallel to and north
+of the Hall of Mists.} LONGDESC:{You have crawled through a very low wide passage parallel to and north\nof the Hall of Mists.}
+END ROOM LOC_PARALLEL1
+ROOM: NAME:LOC_FOREST6 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST6) NORTH:LOC_VALLEY
+VERB: (ROOM=LOC_FOREST6) WEST:LOC_FOREST7
+VERB: (ROOM=LOC_FOREST6) SOUTH:LOC_SLIT
+VERB: (ROOM=LOC_FOREST6) EAST:LOC_FOREST5
+END ROOM LOC_FOREST6
+ROOM: NAME:LOC_FOREST7 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST7) NORTH:LOC_GRATE
+VERB: (ROOM=LOC_FOREST7) WEST:LOC_FOREST6
+VERB: (ROOM=LOC_FOREST7) SOUTH:LOC_FOREST8
+VERB: (ROOM=LOC_FOREST7) EAST:LOC_FOREST5
+END ROOM LOC_FOREST7
+ROOM: NAME:LOC_DEADEND10 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND10) EAST:LOC_ALIKE12
+VERB: (ROOM=LOC_DEADEND10) OUT:LOC_ALIKE12
+END ROOM LOC_DEADEND10
+ROOM: NAME:LOC_FOREST4 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST4) NORTH:LOC_FOREST3
+VERB: (ROOM=LOC_FOREST4) WEST:LOC_FOREST5
+VERB: (ROOM=LOC_FOREST4) SOUTH:LOC_FOREST5
+VERB: (ROOM=LOC_FOREST4) EAST:LOC_FOREST3
+END ROOM LOC_FOREST4
+ROOM: NAME:LOC_DARKROOM SHORTDESC:{You're in dark-room.} LONGDESC:{You're in the dark-room.  A corridor leading south is the only exit.}
+VERB: (ROOM=LOC_DARKROOM) PLOVE:LOC_PLOVER
+VERB: (ROOM=LOC_DARKROOM) SOUTH:LOC_PLOVER
+VERB: (ROOM=LOC_DARKROOM) OUT:LOC_PLOVER
+END ROOM LOC_DARKROOM
+ROOM: NAME:LOC_FOREST5 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST5) NORTH:LOC_FOREST4
+VERB: (ROOM=LOC_FOREST5) WEST:LOC_FOREST7
+VERB: (ROOM=LOC_FOREST5) SOUTH:LOC_FOREST6
+VERB: (ROOM=LOC_FOREST5) EAST:LOC_FOREST4
+END ROOM LOC_FOREST5
+ROOM: NAME:LOC_GIANTROOM SHORTDESC:{You're in Giant Room.} LONGDESC:{You are in the Giant Room.  The ceiling here is too high up for your\nlamp to show it.  Cavernous passages lead east, north, and south.  On\nthe west wall is scrawled the inscription, "FEE FIE FOE FOO" [sic].}
+VERB: (ROOM=LOC_GIANTROOM) NORTH:LOC_IMMENSE
+VERB: (ROOM=LOC_GIANTROOM) SOUTH:LOC_NARROW
+VERB: (ROOM=LOC_GIANTROOM) EAST:LOC_CAVEIN
+END ROOM LOC_GIANTROOM
+ROOM: NAME:LOC_DEADEND12 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND12) SE:LOC_ALIKE13
+END ROOM LOC_DEADEND12
+ROOM: NAME:LOC_FOREST2 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST2) NORTH:LOC_FOREST3
+VERB: (ROOM=LOC_FOREST2) WEST:LOC_FOREST19
+VERB: (ROOM=LOC_FOREST2) SOUTH:LOC_FOREST18
+VERB: (ROOM=LOC_FOREST2) EAST:LOC_FOREST1
+END ROOM LOC_FOREST2
+ROOM: NAME:LOC_DEADEND11 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND11) UPWAR:LOC_ALIKE8
+VERB: (ROOM=LOC_DEADEND11) OUT:LOC_ALIKE8
+END ROOM LOC_DEADEND11
+ROOM: NAME:LOC_FOREST3 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST3) NORTH:LOC_FOREST2
+VERB: (ROOM=LOC_FOREST3) WEST:LOC_FOREST4
+VERB: (ROOM=LOC_FOREST3) SOUTH:LOC_FOREST1
+VERB: (ROOM=LOC_FOREST3) EAST:LOC_FOREST4
+END ROOM LOC_FOREST3
+ROOM: NAME:LOC_JUMBLE SHORTDESC:{You are in a jumble of rock, with cracks everywhere.} LONGDESC:{You are in a jumble of rock, with cracks everywhere.}
+VERB: (ROOM=LOC_JUMBLE) DOWN:LOC_Y2
+VERB: (ROOM=LOC_JUMBLE) Y:LOC_Y2
+VERB: (ROOM=LOC_JUMBLE) UPWAR:LOC_MISTHALL
+END ROOM LOC_JUMBLE
+ROOM: NAME:LOC_DEADEND13 SHORTDESC:{Dead end} LONGDESC:{Dead end}
+VERB: (ROOM=LOC_DEADEND13) NORTH:LOC_DIFFERENT2
+VERB: (ROOM=LOC_DEADEND13) SOUTH:LOC_BADDIRECTION
+VERB: (ROOM=LOC_DEADEND13) OUT:LOC_DIFFERENT2
+END ROOM LOC_DEADEND13
+ROOM: NAME:LOC_FOREST1 SHORTDESC:{You are wandering aimlessly through the forest.} LONGDESC:{You are wandering aimlessly through the forest.}
+VERB: (ROOM=LOC_FOREST1) NORTH:LOC_FOREST2
+VERB: (ROOM=LOC_FOREST1) WEST:LOC_FOREST13
+VERB: (ROOM=LOC_FOREST1) SOUTH:LOC_FOREST3
+VERB: (ROOM=LOC_FOREST1) EAST:LOC_START
+END ROOM LOC_FOREST1
+
+ITEM: NAME:NO_OBJECT DESCRIPTION:{} INVENTORY_DESC:{} STARTROOM={}
+ITEM: NAME:KEYS DESCRIPTION:{There are some keys on the ground here.} INVENTORY_DESC:{Set of keys} STARTROOM={LOC_BUILDING}
+ITEM: NAME:LAMP DESCRIPTION:{There is a shiny brass lamp nearby.} INVENTORY_DESC:{Brass lantern} STARTROOM={LOC_BUILDING}
+ITEM: NAME:GRATE DESCRIPTION:{The grate is locked.} INVENTORY_DESC:{*grate} STARTROOM={LOC_GRATE}
+ITEM: NAME:CAGE DESCRIPTION:{There is a small wicker cage discarded nearby.} INVENTORY_DESC:{Wicker cage} STARTROOM={LOC_COBBLE}
+ITEM: NAME:ROD DESCRIPTION:{A three foot black rod with a rusty star on an end lies nearby.} INVENTORY_DESC:{Black rod} STARTROOM={LOC_DEBRIS}
+ITEM: NAME:ROD2 DESCRIPTION:{A three foot black rod with a rusty mark on an end lies nearby.} INVENTORY_DESC:{Black rod} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:STEPS DESCRIPTION:{Rough stone steps lead down the pit.} INVENTORY_DESC:{*steps} STARTROOM={LOC_PITTOP}
+ITEM: NAME:BIRD DESCRIPTION:{A cheerful little bird is sitting here singing.} INVENTORY_DESC:{Little bird in cage} STARTROOM={LOC_BIRD}
+ITEM: NAME:DOOR DESCRIPTION:{The way north is barred by a massive, rusty, iron door.} INVENTORY_DESC:{*rusty door} STARTROOM={LOC_IMMENSE}
+ITEM: NAME:PILLOW DESCRIPTION:{A small velvet pillow lies on the floor.} INVENTORY_DESC:{Velvet pillow} STARTROOM={LOC_SOFTROOM}
+ITEM: NAME:SNAKE DESCRIPTION:{A huge green fierce snake bars the way!} INVENTORY_DESC:{*snake} STARTROOM={LOC_KINGHALL}
+ITEM: NAME:FISSURE DESCRIPTION:{A crystal bridge spans the fissure.} INVENTORY_DESC:{*fissure} STARTROOM={LOC_EASTBANK}
+ITEM: NAME:OBJ_13 DESCRIPTION:{"Congratulations on bringing light into the dark-room!"} INVENTORY_DESC:{*stone tablet} STARTROOM={LOC_DARKROOM}
+ITEM: NAME:CLAM DESCRIPTION:{There is an enormous clam here with its shell tightly closed.} INVENTORY_DESC:{Giant clam  >GRUNT!<} STARTROOM={LOC_SHELLROOM}
+ITEM: NAME:OYSTER DESCRIPTION:{There is an enormous oyster here with its shell tightly closed.} INVENTORY_DESC:{Giant oyster  >GROAN!<} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:MAGAZINE DESCRIPTION:{There are a few recent issues of "Spelunker Today" magazine here.} INVENTORY_DESC:{"Spelunker Today"} STARTROOM={LOC_ANTEROOM}
+ITEM: NAME:DWARF DESCRIPTION:{} INVENTORY_DESC:{} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:KNIFE DESCRIPTION:{} INVENTORY_DESC:{} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:FOOD DESCRIPTION:{There is food here.} INVENTORY_DESC:{Tasty food} STARTROOM={LOC_BUILDING}
+ITEM: NAME:BOTTLE DESCRIPTION:{There is a bottle of water here.} INVENTORY_DESC:{Small bottle} STARTROOM={LOC_BUILDING}
+ITEM: NAME:WATER DESCRIPTION:{} INVENTORY_DESC:{Water in the bottle} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:OIL DESCRIPTION:{} INVENTORY_DESC:{Oil in the bottle} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:MIRROR DESCRIPTION:{} INVENTORY_DESC:{*mirror} STARTROOM={LOC_MIRRORCANYON}
+ITEM: NAME:PLANT DESCRIPTION:{There is a tiny little plant in the pit, murmuring "water, water, ..."} INVENTORY_DESC:{*plant} STARTROOM={LOC_WESTPIT}
+ITEM: NAME:PLANT2 DESCRIPTION:{The top of a 12-foot-tall beanstalk is poking out of the west pit.} INVENTORY_DESC:{*phony plant} STARTROOM={LOC_WESTEND}
+ITEM: NAME:OBJ_26 DESCRIPTION:{} INVENTORY_DESC:{*stalactite} STARTROOM={LOC_TOPSTALACTITE}
+ITEM: NAME:OBJ_27 DESCRIPTION:{The shadowy figure seems to be trying to attract your attention.} INVENTORY_DESC:{*shadowy figure and/or window} STARTROOM={LOC_WINDOW}
+ITEM: NAME:AXE DESCRIPTION:{There is a little axe here.} INVENTORY_DESC:{Dwarf's axe} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:OBJ_29 DESCRIPTION:{} INVENTORY_DESC:{*cave drawings} STARTROOM={LOC_ORIENTAL}
+ITEM: NAME:OBJ_30 DESCRIPTION:{} INVENTORY_DESC:{*pirate/genie} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:DRAGON DESCRIPTION:{A huge green fierce dragon bars the way!} INVENTORY_DESC:{*dragon} STARTROOM={LOC_SECRET}
+ITEM: NAME:CHASM DESCRIPTION:{A rickety wooden bridge extends across the chasm, vanishing into the\nmist.  A notice posted on the bridge reads, "Stop! Pay troll!"} INVENTORY_DESC:{*chasm} STARTROOM={LOC_SWCHASM}
+ITEM: NAME:TROLL DESCRIPTION:{A burly troll stands by the bridge and insists you throw him a\ntreasure before you may cross.} INVENTORY_DESC:{*troll} STARTROOM={LOC_SWCHASM}
+ITEM: NAME:TROLL2 DESCRIPTION:{The troll is nowhere to be seen.} INVENTORY_DESC:{*phony troll} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:BEAR DESCRIPTION:{There is a ferocious cave bear eyeing you from the far end of the room!} INVENTORY_DESC:{} STARTROOM={LOC_BARRENROOM}
+ITEM: NAME:MESSAG DESCRIPTION:{"This is not the maze where the pirate leaves his treasure chest."} INVENTORY_DESC:{*message in second maze} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:VOLCANO DESCRIPTION:{} INVENTORY_DESC:{*volcano and/or geyser} STARTROOM={LOC_BREATHTAKING}
+ITEM: NAME:VEND DESCRIPTION:{The vending machine swings back to block the passage.} INVENTORY_DESC:{*vending machine} STARTROOM={LOC_DEADEND}
+ITEM: NAME:BATTERY DESCRIPTION:{There are fresh batteries here.} INVENTORY_DESC:{Batteries} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:OBJ_40 DESCRIPTION:{} INVENTORY_DESC:{*carpet and/or moss and/or curtains} STARTROOM={LOC_SOFTROOM}
+ITEM: NAME:OGRE DESCRIPTION:{A formidable ogre bars the northern exit.} INVENTORY_DESC:{*ogre} STARTROOM={LOC_LARGE}
+ITEM: NAME:URN DESCRIPTION:{A small urn is embedded in the rock.} INVENTORY_DESC:{*urn} STARTROOM={LOC_CLIFF}
+ITEM: NAME:CAVITY DESCRIPTION:{There is a small urn-shaped cavity in the rock.} INVENTORY_DESC:{*cavity} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:BLOOD DESCRIPTION:{} INVENTORY_DESC:{*blood} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:RESER DESCRIPTION:{The waters have parted to form a narrow path across the reservoir.} INVENTORY_DESC:{*reservoir} STARTROOM={LOC_RESERVOIR}
+ITEM: NAME:RABBITFOOT DESCRIPTION:{Your keen eye spots a severed leporine appendage lying on the ground.} INVENTORY_DESC:{Leporine appendage} STARTROOM={LOC_FOREST}
+ITEM: NAME:OBJ_47 DESCRIPTION:{"MAGIC WORD XYZZY"} INVENTORY_DESC:{*mud} STARTROOM={LOC_DEBRIS}
+ITEM: NAME:OBJ_48 DESCRIPTION:{"You won't get it up the steps"} INVENTORY_DESC:{*note} STARTROOM={LOC_NUGGET}
+ITEM: NAME:SIGN DESCRIPTION:{"Treasure Vault.  Keys in main office."} INVENTORY_DESC:{*sign} STARTROOM={LOC_ANTEROOM}
+ITEM: NAME:NUGGET DESCRIPTION:{There is a large sparkling nugget of gold here!} INVENTORY_DESC:{Large gold nugget} STARTROOM={LOC_NUGGET}
+ITEM: NAME:OBJ_51 DESCRIPTION:{There are diamonds here!} INVENTORY_DESC:{Several diamonds} STARTROOM={LOC_WESTBANK}
+ITEM: NAME:OBJ_52 DESCRIPTION:{There are bars of silver here!} INVENTORY_DESC:{Bars of silver} STARTROOM={LOC_FLOORHOLE}
+ITEM: NAME:OBJ_53 DESCRIPTION:{There is precious jewelry here!} INVENTORY_DESC:{Precious jewelry} STARTROOM={LOC_SOUTHSIDE}
+ITEM: NAME:COINS DESCRIPTION:{There are many coins here!} INVENTORY_DESC:{Rare coins} STARTROOM={LOC_WESTSIDE}
+ITEM: NAME:CHEST DESCRIPTION:{The pirate's treasure chest is here!} INVENTORY_DESC:{Treasure chest} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:EGGS DESCRIPTION:{There is a large nest here, full of golden eggs!} INVENTORY_DESC:{Golden eggs} STARTROOM={LOC_GIANTROOM}
+ITEM: NAME:TRIDENT DESCRIPTION:{There is a jewel-encrusted trident here!} INVENTORY_DESC:{Jeweled trident} STARTROOM={LOC_WATERFALL}
+ITEM: NAME:VASE DESCRIPTION:{There is a delicate, precious, ming vase here!} INVENTORY_DESC:{Ming vase} STARTROOM={LOC_ORIENTAL}
+ITEM: NAME:EMERALD DESCRIPTION:{There is an emerald here the size of a plover's egg!} INVENTORY_DESC:{Egg-sized emerald} STARTROOM={LOC_PLOVER}
+ITEM: NAME:PYRAMID DESCRIPTION:{There is a platinum pyramid here, 8 inches on a side!} INVENTORY_DESC:{Platinum pyramid} STARTROOM={LOC_DARKROOM}
+ITEM: NAME:PEARL DESCRIPTION:{Off to one side lies a glistening pearl!} INVENTORY_DESC:{Glistening pearl} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:RUG DESCRIPTION:{There is a Persian rug spread out on the floor!} INVENTORY_DESC:{Persian rug} STARTROOM={LOC_SECRET}
+ITEM: NAME:OBJ_63 DESCRIPTION:{There are rare spices here!} INVENTORY_DESC:{Rare spices} STARTROOM={LOC_BOULDERS}
+ITEM: NAME:CHAIN DESCRIPTION:{There is a golden chain lying in a heap on the floor!} INVENTORY_DESC:{Golden chain} STARTROOM={LOC_BARRENROOM}
+ITEM: NAME:RUBY DESCRIPTION:{There is an enormous ruby here!} INVENTORY_DESC:{Giant ruby} STARTROOM={LOC_STOREROOM}
+ITEM: NAME:JADE DESCRIPTION:{A precious jade necklace has been dropped here!} INVENTORY_DESC:{Jade necklace} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:AMBER DESCRIPTION:{There is a rare amber gemstone here!} INVENTORY_DESC:{Amber gemstone} STARTROOM={LOC_NOWHERE}
+ITEM: NAME:SAPPH DESCRIPTION:{A brilliant blue star sapphire is here!} INVENTORY_DESC:{Star sapphire} STARTROOM={LOC_LEDGE}
+ITEM: NAME:OBJ_69 DESCRIPTION:{There is a richly-carved ebony statuette here!} INVENTORY_DESC:{Ebony statuette} STARTROOM={LOC_REACHDEAD}
+
