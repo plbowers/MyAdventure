@@ -186,7 +186,7 @@ public class Game {
     Pattern itemInvDescPat = Pattern.compile("^\\s*inventory: '(.*)'");
     Pattern obitStartPat = Pattern.compile("^\\s*obituaries:");
     //Pattern validVerbs = Pattern.compile("(EAST|WEST|NORTH|SOUTH)");
-    Pattern validVerbs = Pattern.compile("([A-Z]+)");
+    Pattern validVerbs = Pattern.compile("([A-Z]*)(?:,\\s*)?");
     Pattern longLinePat = Pattern.compile("((\\s*)\\S.*)\\|-");
     Pattern longLineInitWhiteSpace = Pattern.compile(".");
     String prevLine = "", longLineSep="", longLine="";
@@ -284,9 +284,21 @@ public class Game {
     					String verb = verbs.get(i);
     					String dest = gotos.get(i);
     					m1 = validVerbs.matcher(verb);
+    					boolean firstVerb = true;
     					while (m1.find()) {
-    						//System.out.println("\tVERB="+m1.group(1)+", DEST="+dest);
-    						newRoom.addVerbName(m1.group(1), dest);
+    						System.out.println("\tVERB="+m1.group(1)+", DEST="+dest);
+    						String verbName = "";
+    						if (m1.group(1).length() == 0) {
+    							if (firstVerb) {
+    								verbName = "AUTO";
+    							}
+    						} else
+    							verbName = m1.group(1);
+    						if (verbName.length() > 0) {
+    							System.out.println("\tDEBUG: Adding verb="+verbName+", DEST="+dest);
+    							newRoom.addVerbName(verbName, dest);
+    						}
+    						firstVerb = false;
     					}
     				}
     				allRooms.put(roomName, newRoom);
